@@ -30,18 +30,23 @@ public class PlayerInputs : MonoBehaviour {
         if (controller.HasReleasedLeft == false) {
             horizontalMove = Input.GetAxisRaw("HorizontalLeft") * runSpeed;
         }
-        else { horizontalMove = 0; }
+        else { horizontalMove = 0; }        // stops the hozizontalMove value getting bigger every frame the key is held down
         if (Input.GetButtonUp("HorizontalLeft") && shouldLimitKeyPresses) {
             controller.HasReleasedLeft = true;
+            UIManager.Instance.UsedLeft();
+
         }
 
         // Get Right Input
         if (controller.HasReleasedRight == false) {
             horizontalMove += Input.GetAxisRaw("HorizontalRight") * runSpeed;
+
         }
         else { horizontalMove += 0; }
         if (Input.GetButtonUp("HorizontalRight") && shouldLimitKeyPresses) {
             controller.HasReleasedRight = true;
+            UIManager.Instance.UsedRight();
+
         }
 
         // Jump Input
@@ -79,20 +84,23 @@ public class PlayerInputs : MonoBehaviour {
 
     private void ResetPlayer() {
         controller.ResetPlayer();
-        //ResetInputs();
     }
-    public void ResetInputs() {
+    /*public void ResetInputs() {
         hasReleasedLeft = false;
         hasReleasedRight = false;
         hasPressedJump = false;
-    }
+    }*/
 
     public void IsPlayerStillClimbing(ref bool up, ref bool down) {
         if (Input.GetButtonUp("VerticalUp") && up == false) {           // only need to check if the has still not stopped climbing i.e. up is false
             up = true;
+            UIManager.Instance.UsedClimbUp();                           // tell the UI Manager to grey out the climb up icon
+
         }
         if (Input.GetButtonUp("VerticalDown") && down == false) {
             down = true;
+            UIManager.Instance.UsedClimbDown();                         // tell the UI Manager to grey out the climb up icon
+
         }
     }
 }

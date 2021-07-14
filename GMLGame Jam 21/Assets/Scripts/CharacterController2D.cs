@@ -11,7 +11,6 @@ public class CharacterController2D : MonoBehaviour {
     [SerializeField] private LayerMask whatIsGround;                          // A mask determining what is ground to the character
 
     [SerializeField] private Transform groundCheck;                         // A position marking where to check if the player is grounded.
-    [SerializeField] private Transform ceilingCheck;                            // A position marking where to check for ceilings
     [SerializeField] private bool autoResetLevel = false;                   // should the player automatically reset once the player has used all their actions
 
     private float resetTime = 2;                // The time after the player pressed the last key before the game resets
@@ -21,6 +20,7 @@ public class CharacterController2D : MonoBehaviour {
     private bool isFacingRight = true;          // For determining which way the player is currently facing.  
     private bool isTouchingClimable = false;    // is the player touching a surface they can climb up
     private bool isClimbing = false;            // has the player actually started climbing
+    private bool isDead = false;                // true once the OnPlayerDeath method is called. Used to stop it activating twice due to multiple colliders on player
 
     //Movement Tracking Variables
     private bool hasReleasedRight = false;
@@ -30,7 +30,7 @@ public class CharacterController2D : MonoBehaviour {
     private bool hasJumped;
 
     private Vector3 startPosition;              // The position that the player will return to when the player Resets
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb2D;
     private PlayerInputs playerInputs;
     private Animator anim;
 
@@ -63,7 +63,7 @@ public class CharacterController2D : MonoBehaviour {
     // === PROPERTIES END
 
     private void Awake() {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         playerInputs = GetComponent<PlayerInputs>();
         anim = GetComponent<Animator>();
         startPosition = transform.position;
@@ -78,8 +78,9 @@ public class CharacterController2D : MonoBehaviour {
             }
         }
 
-        if (HaveIfAllKeysUsed() && autoResetLevel) {
-            Invoke("ResetPlayer", 3f);
+        if (HaveAllKeysBeenUsed() && autoResetLevel && !isDead) {
+            Invoke("ResetPlayer", resetTime);
+            isDead = true;
 
 
         }
@@ -131,11 +132,11 @@ public class CharacterController2D : MonoBehaviour {
             else if (isClimbing) {
                 anim.speed = 0;
             }
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, inputVertical * climbSpeed);
-            rigidbody2D.gravityScale = 0;
+            rb2D.velocity = new Vector2(rb2D.velocity.x, inputVertical * climbSpeed);
+            rb2D.gravityScale = 0;
         }
         else {
-            rigidbody2D.gravityScale = 3;       // reset the gravity when the player loses contact with the ladder 
+            rb2D.gravityScale = 3;       // reset the gravity when the player loses contact with the ladder 
             isClimbing = false;
             anim.SetBool("IsClimbing", false);
             anim.speed = 1;
@@ -148,11 +149,11 @@ public class CharacterController2D : MonoBehaviour {
 
 
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
             Vector3 velocity = Vector3.zero;
             // And then smoothing it out and applying it to the character
 
-            rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing);
+            rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, targetVelocity, ref velocity, movementSmoothing);
 
             /*if (move > 0.1f || move < -0.1f) {
                 anim.SetBool("IsRunning", true);
@@ -184,10 +185,12 @@ public class CharacterController2D : MonoBehaviour {
         if (isGrounded && jump && !isTouchingClimable && !hasJumped) {
             // Add a vertical force to the player.
             isGrounded = false;
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            rb2D.AddForce(new Vector2(0f, jumpForce));
             anim.SetBool("IsJumping", true);
             if (playerInputs.shouldLimitKeyPresses) {
                 hasJumped = true;
+                UIManager.Instance.UsedJump();
+
             }
         }
     }
@@ -204,18 +207,27 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     public void ResetPlayer() {
+        // Reset booleans which track player inputs
         hasReleasedLeft = false;
         hasReleasedRight = false;
         hasClimbedUp = false;
         hasClimbedDown = false;
         hasJumped = false;
-        transform.position = startPosition;
-        rigidbody2D.velocity = Vector3.zero;
+
+        transform.position = startPosition;             // Reset Player position
+        rb2D.velocity = Vector3.zero;       
+        playerInputs.enabled = true;                    // Allow the player to make inputs
+        isDead = false;
+        anim.Play("Idle");
+        UIManager.Instance.ResetUI();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Climbable")) {
             isTouchingClimable = true;
+        }
+        if (collision.CompareTag("Water")) {
+            OnPlayerDeath();
         }
     }
 
@@ -230,7 +242,7 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     // Will Return True if all the players actions have been performed
-    private bool HaveIfAllKeysUsed() {
+    private bool HaveAllKeysBeenUsed() {
         if (hasReleasedLeft && hasReleasedRight
             && hasClimbedUp && hasClimbedDown
             && hasJumped
@@ -238,6 +250,15 @@ public class CharacterController2D : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+    public void OnPlayerDeath() {
+        if (isDead)
+            return;
+        isDead = true;
+        anim.Play("Hurt");
+        playerInputs.enabled = false;
+        Invoke("ResetPlayer", resetTime);
     }
 
 }
