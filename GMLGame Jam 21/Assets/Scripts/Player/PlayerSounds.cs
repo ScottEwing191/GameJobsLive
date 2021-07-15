@@ -19,9 +19,9 @@ public class PlayerSounds : MonoBehaviour {
         // NOT WORKING SOUND DOEST STOP WHEN THE ANIMATION DOES. aLSO SOUND DOESNT PLAY WHEN GOING DOWN
         if (anim.speed != 0) {
             if (!climbingSource.isPlaying) {
-                climbingSource.Play();
                 climbingSource.volume = 0.5f;
-
+                climbingSource.loop = true;
+                climbingSource.Play();
 
             }
         }
