@@ -16,7 +16,7 @@ public class CharacterController2D : MonoBehaviour {
     private float resetTime = 2;                // The time after the player pressed the last key before the game resets
     const float groundedRadius = .2f;           // Radius of the overlap circle to determine if grounded
 
-    private bool isGrounded;                 // Whether or not the player is grounded.
+    public bool isGrounded;                 // Whether or not the player is grounded.
     private bool isFacingRight = true;          // For determining which way the player is currently facing.  
     private bool isTouchingClimable = false;    // is the player touching a surface they can climb up
     private bool isClimbing = false;            // has the player actually started climbing
@@ -60,6 +60,11 @@ public class CharacterController2D : MonoBehaviour {
         get { return hasJumped; }
         set { hasJumped = value; }
     }
+    public bool IsGrounded {
+        get { return isGrounded; }
+        set { isGrounded = value; }
+    }
+
     // === PROPERTIES END
 
     private void Awake() {
@@ -186,6 +191,7 @@ public class CharacterController2D : MonoBehaviour {
             // Add a vertical force to the player.
             isGrounded = false;
             rb2D.AddForce(new Vector2(0f, jumpForce));
+            anim.Play("Jump");
             anim.SetBool("IsJumping", true);
             if (playerInputs.shouldLimitKeyPresses) {
                 hasJumped = true;
