@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Water
   - Music
+  - SpinningPlatform
   layers:
   - Default
   - TransparentFX

@@ -235,6 +235,9 @@ public class CharacterController2D : MonoBehaviour {
         if (collision.CompareTag("Water")) {
             OnPlayerDeath();
         }
+        /*if (collision.CompareTag("SpinningPlatform")){                   // Parent player to spinning platform 
+            this.transform.parent = collision.transform;
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
@@ -243,8 +246,23 @@ public class CharacterController2D : MonoBehaviour {
             isClimbing = false;
             if (Input.GetButton("VerticalUp") && playerInputs.shouldLimitKeyPresses) {
                 hasClimbedUp = true;
+                UIManager.Instance.UsedClimbUp();
             }
+            /*if (collision.CompareTag("SpinningPlatform")){                   // Un-parent player to spinning platform 
+                transform.parent = null;
+            }*/
         }
+    }
+
+
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.CompareTag("SpinningPlatform"))
+            this.transform.parent = col.transform;
+    }
+
+    void OnCollisionExit2D(Collision2D col) {
+        if (col.gameObject.CompareTag("SpinningPlatform"))
+            this.transform.parent = null;
     }
 
     // Will Return True if all the players actions have been performed
