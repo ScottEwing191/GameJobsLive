@@ -20,7 +20,8 @@ public class PlayerSounds : MonoBehaviour {
         if (anim.speed != 0) {
             if (!climbingSource.isPlaying) {
                 climbingSource.Play();
-                
+                climbingSource.volume = 0.5f;
+
 
             }
         }
@@ -33,6 +34,7 @@ public class PlayerSounds : MonoBehaviour {
         climbingSource.Stop();
         if (!fireDeathSource.isPlaying) {
             fireDeathSource.Play();
+            fireDeathSource.volume = 0.3f;
 
         }
     }
@@ -40,7 +42,7 @@ public class PlayerSounds : MonoBehaviour {
     private void Jump() {
         if (!jumpSource.isPlaying) {
             jumpSource.Play();
-
+            jumpSource.volume = 0.2f;
         }
     }
 
