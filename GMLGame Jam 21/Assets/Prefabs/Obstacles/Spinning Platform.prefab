@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8160426606242089396}
   - component: {fileID: 8160426606242089395}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatformSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8160426606557884786}
   - component: {fileID: 8160426606557884788}
   - component: {fileID: 8160426606557884784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Platform
   m_TagString: SpinningPlatform
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8160426606568710473}
   - component: {fileID: 8160426606568710472}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatformSprite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8160426607176624282}
   - component: {fileID: 8160426607176624281}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatformSprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

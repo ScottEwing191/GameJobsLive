@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -21,5 +22,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void LevelComplete() {
         print("LEVEL COMPLETE");
+        // Load the next scene if it exists otherwise load the main menu
+        int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        //SceneManager.sceneCountInBuildSettings;
+        if (currentBuildIndex < SceneManager.sceneCountInBuildSettings - 1) {
+            SceneManager.LoadScene(currentBuildIndex + 1);
+        }
+        else {
+            SceneManager.LoadScene(0);
+        }
     }
 }

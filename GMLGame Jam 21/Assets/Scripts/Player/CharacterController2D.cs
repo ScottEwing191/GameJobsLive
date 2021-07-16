@@ -12,6 +12,7 @@ public class CharacterController2D : MonoBehaviour {
 
     [SerializeField] private Transform groundCheck;                         // A position marking where to check if the player is grounded.
     [SerializeField] private bool autoResetLevel = false;                   // should the player automatically reset once the player has used all their actions
+    [SerializeField] private bool canJumpFromRope = false;
 
     private float resetTime = 2;                // The time after the player pressed the last key before the game resets
     const float groundedRadius = .2f;           // Radius of the overlap circle to determine if grounded
@@ -19,7 +20,7 @@ public class CharacterController2D : MonoBehaviour {
     public bool isGrounded;                 // Whether or not the player is grounded.
     private bool isFacingRight = true;          // For determining which way the player is currently facing.  
     private bool isTouchingClimable = false;    // is the player touching a surface they can climb up
-    private bool isClimbing = false;            // has the player actually started climbing
+    private bool isClimbing = false;            // CURRENTLY NOT USED FOR ANYTHING  has the player actually started climbing
     private bool isDead = false;                // true once the OnPlayerDeath method is called. Used to stop it activating twice due to multiple colliders on player
 
     //Movement Tracking Variables
@@ -33,6 +34,8 @@ public class CharacterController2D : MonoBehaviour {
     private Rigidbody2D rb2D;
     private PlayerInputs playerInputs;
     private Animator anim;
+    private RopeControls ropeControls;
+    private PlayerSounds playerSounds;
 
 
 
@@ -72,6 +75,8 @@ public class CharacterController2D : MonoBehaviour {
         playerInputs = GetComponent<PlayerInputs>();
         anim = GetComponent<Animator>();
         startPosition = transform.position;
+        ropeControls = GetComponentInChildren<RopeControls>();
+        playerSounds = GetComponent<PlayerSounds>();
 
     }
 
@@ -111,6 +116,24 @@ public class CharacterController2D : MonoBehaviour {
 
     public void Move(float move, float climbUp, float climbDown, bool jump) {
 
+        // Do Rope Stuff
+        if (ropeControls.Attached) {
+            
+            SetClimingAnimations(climbUp, climbDown);
+
+            ropeControls.PlayerRopeMovement(move, climbUp, climbDown, jump);
+            if (jump && !isTouchingClimable && !hasJumped && canJumpFromRope) {
+                Jump();
+            }
+            return;
+        }
+        else {
+            isClimbing = false;
+            anim.SetBool("IsClimbing", false);
+            //playerSounds.ClimbingSource.Stop();         // Stop Climbing Sound
+
+        }
+
 
         if (isTouchingClimable) {
 
@@ -129,14 +152,17 @@ public class CharacterController2D : MonoBehaviour {
                 inputVertical += climbDown;
             }
 
-            if (inputVertical != 0) {
+            /*if (inputVertical != 0) {
                 anim.speed = 1;
                 anim.SetBool("IsClimbing", true);
                 isClimbing = true;
             }
             else if (isClimbing) {
                 anim.speed = 0;
-            }
+            }*/
+
+            SetClimingAnimations(climbUp, climbDown);
+
             rb2D.velocity = new Vector2(rb2D.velocity.x, inputVertical * climbSpeed);
             rb2D.gravityScale = 0;
         }
@@ -145,8 +171,8 @@ public class CharacterController2D : MonoBehaviour {
             isClimbing = false;
             anim.SetBool("IsClimbing", false);
             anim.speed = 1;
-
-
+            // Stop Climbing Sound
+            playerSounds.ClimbingSource.Stop();
         }
 
         //only control the player if grounded or airControl is turned on
@@ -160,21 +186,21 @@ public class CharacterController2D : MonoBehaviour {
 
             rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-            /*if (move > 0.1f || move < -0.1f) {
+            if (move > 0.1f || move < -0.1f) {
+                anim.SetBool("IsRunning", true);
+            }
+            else {
+                anim.SetBool("IsRunning", false);
+
+            }
+
+            /*if (velocity.x > 0.1f || velocity.x < -0.1f) {
                 anim.SetBool("IsRunning", true);
             }
             else {
                 anim.SetBool("IsRunning", false);
 
             }*/
-
-            if (velocity.x > 0.1f || velocity.x < -0.1f) {
-                anim.SetBool("IsRunning", true);
-            }
-            else {
-                anim.SetBool("IsRunning", false);
-
-            }
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !isFacingRight) {
                 // ... flip the player.
@@ -188,16 +214,32 @@ public class CharacterController2D : MonoBehaviour {
         }
         // If the player should jump...
         if (isGrounded && jump && !isTouchingClimable && !hasJumped) {
-            // Add a vertical force to the player.
-            isGrounded = false;
-            rb2D.AddForce(new Vector2(0f, jumpForce));
-            anim.Play("Jump");
-            anim.SetBool("IsJumping", true);
-            if (playerInputs.shouldLimitKeyPresses) {
-                hasJumped = true;
-                UIManager.Instance.UsedJump();
+            
+            Jump();
+        }
+    }
 
-            }
+    private void Jump() {
+        // Add a vertical force to the player.
+        isGrounded = false;
+        rb2D.AddForce(new Vector2(0f, jumpForce));
+        anim.Play("Jump");
+        anim.SetBool("IsJumping", true);
+        if (playerInputs.shouldLimitKeyPresses) {
+            hasJumped = true;
+            UIManager.Instance.UsedJump();
+
+        }
+    }
+
+    private void SetClimingAnimations(float climbUp, float climbDown) {
+        if (climbUp != 0 || climbDown != 0) {
+            anim.Play("Climb");
+            anim.SetBool("IsClimbing", true);
+        }
+        else if (!isGrounded) {
+            anim.Play("IdleClimb");
+            anim.SetBool("IsClimbing", true);
         }
     }
 

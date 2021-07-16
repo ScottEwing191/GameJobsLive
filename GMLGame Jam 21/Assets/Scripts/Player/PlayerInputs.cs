@@ -51,7 +51,7 @@ public class PlayerInputs : MonoBehaviour {
 
         // Jump Input
         //if (Input.GetButtonDown("Jump")) {
-        if (Input.GetButtonDown("VerticalUp")) {
+        if (Input.GetButtonDown("Jump")) {
 
             jump = true;
         }

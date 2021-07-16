@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5974621363316470633}
   - component: {fileID: 5974621363316470632}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatformSprite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5974621363383089824}
   - component: {fileID: 5974621363383089823}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlatformSprite1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 5974621364488028977}
   - component: {fileID: 5974621364488028976}
   - component: {fileID: 5974621364488028978}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BlinkingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
