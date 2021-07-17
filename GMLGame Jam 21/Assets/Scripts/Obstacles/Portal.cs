@@ -6,7 +6,7 @@ public class Portal : MonoBehaviour
 {
 
     [SerializeField] private Transform targetPortal;
-    [SerializeField] private AudioSource portalSource;
+    [SerializeField] private AudioSource portalSource;                  //it doesn't want to remember reference in prefab but oh well... life ;)
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
