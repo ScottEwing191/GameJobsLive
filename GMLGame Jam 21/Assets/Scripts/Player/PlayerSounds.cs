@@ -25,6 +25,8 @@ public class PlayerSounds : MonoBehaviour {
 
     private void Climb() {
         if (!climbingSource.isPlaying) {
+            climbingSource.time = Random.Range(0f, climbingSource.clip.length);
+            climbingSource.volume = 0.6f;
             climbingSource.Play();
         }
     }
