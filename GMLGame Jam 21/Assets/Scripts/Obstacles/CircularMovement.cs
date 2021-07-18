@@ -13,6 +13,8 @@ public class CircularMovement : MonoBehaviour {
 	float posX, posY, angle = 0f;
 	float directionModifier = 1;
 
+	float delayTime = 0f;
+
     private void Start() {
         if (rotateAntiClockwise) {
 			directionModifier = -1;
