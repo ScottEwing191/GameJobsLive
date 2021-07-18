@@ -632,6 +632,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ed0d105044a9744d9e908965ce43e3e, type: 3}
+--- !u!82 &1131029698 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 878696246483296866, guid: 9b285aa13e6937a47808211ff61d9794, type: 3}
+  m_PrefabInstance: {fileID: 7779254687469462301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1198846851
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,6 +4688,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7172562746630040378, guid: 9b285aa13e6937a47808211ff61d9794, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779254687803158700, guid: 9b285aa13e6937a47808211ff61d9794, type: 3}
+      propertyPath: portalSource
+      value: 
+      objectReference: {fileID: 1131029698}
     - target: {fileID: 7779254687942181824, guid: 9b285aa13e6937a47808211ff61d9794, type: 3}
       propertyPath: m_Name
       value: Portal
