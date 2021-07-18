@@ -134,7 +134,6 @@ public class UIManager : MonoSingleton<UIManager> {
             time += Time.deltaTime;
             yield return null;
         }
-        print("Complete");
         resetCircle.transform.localScale = targetScale;
         
         yield return null;

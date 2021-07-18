@@ -89,6 +89,10 @@ public class CharacterController2D : MonoBehaviour {
                 playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
             }
         }
+        // Does the same check again but for the vines
+        if (ropeControls.Attached && playerInputs.shouldLimitKeyPresses) {
+            playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
+        }
 
         if (HaveAllKeysBeenUsed() && autoResetLevel && !isDead) {
             Invoke("ResetPlayer", resetTime);
@@ -123,10 +127,32 @@ public class CharacterController2D : MonoBehaviour {
             
             SetClimingAnimations(climbUp, climbDown);
 
+            // Check if player is allowed to climb up or down. and if not set the climbUp/Down value to 0
+            if (climbUp > 0 && hasClimbedUp) {
+                climbUp = 0;
+            }
+            if (climbDown < 0 && hasClimbedDown) {
+                climbDown = 0;
+            }
+
             ropeControls.PlayerRopeMovement(move, climbUp, climbDown, jump);
             if (jump && !isTouchingClimable && !hasJumped && canJumpFromVine) {
                 Jump(vineJumpMultiplier);
             }
+
+            // Set Climb limit Variables
+            /*if (playerInputs.shouldLimitKeyPresses) {
+                playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
+            }*/
+            /*if (climbUp > 0 ) {
+                hasClimbedUp = true;
+                UIManager.Instance.UsedClimbUp();
+            }
+            if (climbDown < 0) {
+                hasClimbedDown = true;
+                UIManager.Instance.UsedClimbDown();
+            }*/
+
             return;
         }
         else {
