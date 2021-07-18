@@ -36,7 +36,7 @@ public class Footstep : MonoBehaviour
 
     //Event for the Run animation
     private void Step()
-    {
+   {
         if (isGrounded)
         {
             AudioClip clip = GetRandomClip();

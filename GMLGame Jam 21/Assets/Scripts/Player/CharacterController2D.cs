@@ -38,6 +38,7 @@ public class CharacterController2D : MonoBehaviour {
     private Animator anim;
     private RopeControls ropeControls;
     private PlayerSounds playerSounds;
+    private GameObject canvas;                  // Need to flip the canvas every time the player flipped when the direction changes
 
 
 
@@ -70,6 +71,16 @@ public class CharacterController2D : MonoBehaviour {
         set { isGrounded = value; }
     }
 
+    public bool IsTouchingClimable {
+        get { return isTouchingClimable; }
+        set { isTouchingClimable = value; }
+    }
+
+    public RopeControls RopeControls {
+        get { return ropeControls; }
+        set { ropeControls = value; }
+    }
+
     // === PROPERTIES END
 
     private void Awake() {
@@ -79,6 +90,7 @@ public class CharacterController2D : MonoBehaviour {
         startPosition = transform.position;
         ropeControls = GetComponentInChildren<RopeControls>();
         playerSounds = GetComponent<PlayerSounds>();
+        canvas = GetComponentInChildren<Canvas>().gameObject;
 
     }
 
@@ -91,7 +103,9 @@ public class CharacterController2D : MonoBehaviour {
         }
         // Does the same check again but for the vines
         if (ropeControls.Attached && playerInputs.shouldLimitKeyPresses) {
-            playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
+            //playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
+            playerInputs.IsPlayerStillClimbingUp(ref hasClimbedUp);     // Player Cant Climb Down now
+
         }
 
         if (HaveAllKeysBeenUsed() && autoResetLevel && !isDead) {
@@ -100,11 +114,9 @@ public class CharacterController2D : MonoBehaviour {
 
 
         }
-    }
 
-
-    private void FixedUpdate() {
-        //bool wasGrounded = m_Grounded;
+        // Switched to doing this in Update instead of fixed. Solves the sound not always playing for every jump when holding the jump button 
+        // .. dont know if it maybe broke other things.
         isGrounded = false;
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
@@ -116,6 +128,22 @@ public class CharacterController2D : MonoBehaviour {
             }
         }
 
+    }
+
+
+    private void FixedUpdate() {
+        /*//bool wasGrounded = m_Grounded;
+        isGrounded = false;
+        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
+        for (int i = 0; i < colliders.Length; i++) {
+            if (colliders[i].gameObject != gameObject) {
+                isGrounded = true;
+                anim.SetBool("IsJumping", false);
+
+            }
+        }*/
+
 
     }
 
@@ -124,21 +152,52 @@ public class CharacterController2D : MonoBehaviour {
 
         // Do Rope Stuff
         if (ropeControls.Attached) {
-            
+
+            if (jump && playerInputs.shouldLimitKeyPresses) {
+                hasJumped = true;
+                UIManager.Instance.UsedJump();
+            }
+            //Changing Controls so that instead of climbing down the vine the player jumps off.
+            // This means that the jump inpu no longer does anything
+            // and the climb Down input jumps off input jumps off
+            // Basically Climb down now mean drop/jump off vine
+            jump = false;
+            if (climbDown < 0 && !hasClimbedDown) {
+                jump = true;        // jump is not what happens when the player hits the climb down button
+            }
+            climbDown = 0;      // the player cannot climb down
+
+            if (hasClimbedUp && playerInputs.shouldLimitKeyPresses) {
+                climbUp = 0;
+            }
+
             SetClimingAnimations(climbUp, climbDown);
 
             // Check if player is allowed to climb up or down. and if not set the climbUp/Down value to 0
-            if (climbUp > 0 && hasClimbedUp) {
-                climbUp = 0;
-            }
-            if (climbDown < 0 && hasClimbedDown) {
+            //if (climbUp > 0 && hasClimbedUp) {
+            //    climbUp = 0;
+           // }
+
+            // DONT DELETE Old version where the player is able to climb down the ladder
+            /*if (climbDown < 0 && hasClimbedDown) {
+                hasClimbedDown = false;
+                UIManager.Instance.UsedClimbDown();
                 climbDown = 0;
-            }
+            }*/
+
+            
 
             ropeControls.PlayerRopeMovement(move, climbUp, climbDown, jump);
-            if (jump && !isTouchingClimable && !hasJumped && canJumpFromVine) {
-                Jump(vineJumpMultiplier);
+            /*if (jump && !isTouchingClimable && !hasJumped && canJumpFromVine) {
+                Jump(true, vineJumpMultiplier);
+            }*/
+
+            if (jump && !isTouchingClimable && canJumpFromVine && playerInputs.shouldLimitKeyPresses) {
+                hasClimbedDown = true;
+                UIManager.Instance.UsedClimbDown();
+                Jump(true, vineJumpMultiplier);
             }
+
 
             // Set Climb limit Variables
             /*if (playerInputs.shouldLimitKeyPresses) {
@@ -247,16 +306,21 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void Jump(float jumpForceMultiplier = 1) {      // jump force multiplier can be used if the if a different jump force is required when
-                                                            // .. jumping from certain surfaces eg. ropes
+    private void Jump(bool ignoreJumpLimit = false ,float jumpForceMultiplier = 1) {      // jump force multiplier can be used if the if a different jump force is required when
+        print("Jump");                                               // .. jumping from certain surfaces eg. ropes. Also ignore jumps from rope
+        bool test = anim.GetBool("IsJumping");
+        if (isGrounded) {
+            //anim.Play("Idle");
+            anim.StopPlayback();
+        }   
         // Add a vertical force to the player.
         isGrounded = false;
         rb2D.AddForce(new Vector2(0f, jumpForce * jumpForceMultiplier));
         anim.Play("Jump");
         anim.SetBool("IsJumping", true);
-        if (playerInputs.shouldLimitKeyPresses) {
-            hasJumped = true;
-            UIManager.Instance.UsedJump();
+        if (playerInputs.shouldLimitKeyPresses && !ignoreJumpLimit) {
+            //hasJumped = true;
+            //UIManager.Instance.UsedJump();
 
         }
     }
@@ -281,6 +345,9 @@ public class CharacterController2D : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+
+        // Flip the canvas Scale
+        canvas.transform.localScale = theScale;
     }
 
     public void ResetPlayer() {
