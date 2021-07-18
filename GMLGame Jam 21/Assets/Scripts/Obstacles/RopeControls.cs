@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RopeControls : MonoBehaviour {
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
     private HingeJoint2D hj;
 
     [SerializeField] float pushForce = 10f;
@@ -14,8 +14,8 @@ public class RopeControls : MonoBehaviour {
                                                                            // .. grabbed
 
 
-    [SerializeField] private bool attached = false;
-    [SerializeField] private Transform attachedTo;
+    private bool attached = false;
+    private Transform attachedTo;
     private GameObject disregard;
     private bool canClimb = true;
     private float climbWaitTime = 0.25f;
@@ -83,15 +83,17 @@ public class RopeControls : MonoBehaviour {
     }
 
 
-    private void Detach() {
-        //Vector2 playerVelocity = rb.velocity;
+    public void Detach() {
+        if (hj.connectedBody == null) {
+            return;
+        }
         hj.connectedBody.gameObject.GetComponent<RopeSegment>().IsPlayerAttached = false;
         attached = false;
         hj.enabled = false;
         hj.connectedBody = null;
         disregard = attachedTo.gameObject;
         attachedTo = null;
-        //rb.velocity = playerVelocity;
+
         StartCoroutine(ClearDisregardTimer());          // wait a second after detaching from the Rope before allowing the player to re-attach
                                                         // .. if the the player detaches at the top they have time to fall without re attaching
     }

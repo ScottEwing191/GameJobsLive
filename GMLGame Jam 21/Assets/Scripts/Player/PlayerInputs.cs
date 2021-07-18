@@ -19,7 +19,7 @@ public class PlayerInputs : MonoBehaviour {
     private float climbDownMove = 0f;
     private bool jump = false;
 
-    private Coroutine resetTimer;
+    private Coroutine resetTimer;             
     private bool isResetTimerRoutineRunning = false;
 
 
@@ -62,10 +62,14 @@ public class PlayerInputs : MonoBehaviour {
 
         // Reset Input
         if (Input.GetButtonDown("Reset")) {
-            resetTimer = StartCoroutine(ResetTimer());
+            //resetTimer = StartCoroutine(ResetTimer());
+            UIManager.Instance.StartResetImage(resetTime);
+
         }
-        if (Input.GetButtonUp("Reset") && isResetTimerRoutineRunning) {
-            StopCoroutine(resetTimer);
+        //if (Input.GetButtonUp("Reset") && isResetTimerRoutineRunning) {
+        if (Input.GetButtonUp("Reset")) {
+            //StopCoroutine(resetTimer);
+            UIManager.Instance.StopResetImage();
         }
 
     }
@@ -75,12 +79,12 @@ public class PlayerInputs : MonoBehaviour {
         jump = false;
     }
 
-    IEnumerator ResetTimer() {
+    /*IEnumerator ResetTimer() {
         isResetTimerRoutineRunning = true;
         yield return new WaitForSeconds(resetTime);
         ResetPlayer();
         isResetTimerRoutineRunning = false;
-    }
+    }*/
 
     private void ResetPlayer() {
         controller.ResetPlayer();

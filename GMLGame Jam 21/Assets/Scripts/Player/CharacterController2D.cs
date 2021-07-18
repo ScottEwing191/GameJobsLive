@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class CharacterController2D : MonoBehaviour {
     [SerializeField] private float jumpForce = 400f;                            // Amount of force added when the player jumps.
+    [Range(0.01f, 1)] [SerializeField] private float vineJumpMultiplier = 1;    // Modifies the jump force the player gets when jumping from a vine
+    [SerializeField] private bool canJumpFromVine = false;
+
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;    // How much to smooth out the movement
     [SerializeField] private float climbSpeed = 100f;                               // How fast can the player climb
     [SerializeField] private bool airControl = false;                           // Whether or not a player can steer while jumping;
@@ -12,7 +15,6 @@ public class CharacterController2D : MonoBehaviour {
 
     [SerializeField] private Transform groundCheck;                         // A position marking where to check if the player is grounded.
     [SerializeField] private bool autoResetLevel = false;                   // should the player automatically reset once the player has used all their actions
-    [SerializeField] private bool canJumpFromRope = false;
 
     private float resetTime = 2;                // The time after the player pressed the last key before the game resets
     const float groundedRadius = .2f;           // Radius of the overlap circle to determine if grounded
@@ -122,8 +124,8 @@ public class CharacterController2D : MonoBehaviour {
             SetClimingAnimations(climbUp, climbDown);
 
             ropeControls.PlayerRopeMovement(move, climbUp, climbDown, jump);
-            if (jump && !isTouchingClimable && !hasJumped && canJumpFromRope) {
-                Jump();
+            if (jump && !isTouchingClimable && !hasJumped && canJumpFromVine) {
+                Jump(vineJumpMultiplier);
             }
             return;
         }
@@ -219,10 +221,11 @@ public class CharacterController2D : MonoBehaviour {
         }
     }
 
-    private void Jump() {
+    private void Jump(float jumpForceMultiplier = 1) {      // jump force multiplier can be used if the if a different jump force is required when
+                                                            // .. jumping from certain surfaces eg. ropes
         // Add a vertical force to the player.
         isGrounded = false;
-        rb2D.AddForce(new Vector2(0f, jumpForce));
+        rb2D.AddForce(new Vector2(0f, jumpForce * jumpForceMultiplier));
         anim.Play("Jump");
         anim.SetBool("IsJumping", true);
         if (playerInputs.shouldLimitKeyPresses) {
@@ -262,6 +265,7 @@ public class CharacterController2D : MonoBehaviour {
         hasClimbedDown = false;
         hasJumped = false;
 
+        ropeControls.Detach();
         transform.position = startPosition;             // Reset Player position
         rb2D.velocity = Vector3.zero;       
         playerInputs.enabled = true;                    // Allow the player to make inputs

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RopeSegment : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject connectedAbove, connectedBelow;
     private bool isPlayerAttached;
 
@@ -12,7 +13,7 @@ public class RopeSegment : MonoBehaviour
         set { isPlayerAttached = value; }
     }
 
-    void Start()
+    protected virtual void Start()
     {
         connectedAbove = GetComponent<HingeJoint2D>().connectedBody.gameObject;
         RopeSegment aboveSegment = connectedAbove.GetComponent<RopeSegment>();
@@ -25,11 +26,5 @@ public class RopeSegment : MonoBehaviour
             GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, 0);
 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

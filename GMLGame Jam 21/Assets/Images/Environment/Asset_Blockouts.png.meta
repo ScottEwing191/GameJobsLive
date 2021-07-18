@@ -1,0 +1,1252 @@
+fileFormatVersion: 2
+guid: 17362607041bc4d49b8814e29e0e5fca
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2239048816624070795
+    second: Asset_Blockouts_0
+  - first:
+      213: -9107198118659033314
+    second: Asset_Blockouts_1
+  - first:
+      213: 8290640570983538592
+    second: Asset_Blockouts_2
+  - first:
+      213: 6942215483923236237
+    second: Asset_Blockouts_3
+  - first:
+      213: -6230722168947156791
+    second: Asset_Blockouts_4
+  - first:
+      213: -4478283350420461906
+    second: Asset_Blockouts_5
+  - first:
+      213: -5362593352189999079
+    second: Asset_Blockouts_6
+  - first:
+      213: 5184319371630309646
+    second: Asset_Blockouts_7
+  - first:
+      213: 2923316875052928568
+    second: Asset_Blockouts_8
+  - first:
+      213: 7367057048579820652
+    second: Asset_Blockouts_9
+  - first:
+      213: -7905342853542122702
+    second: Asset_Blockouts_10
+  - first:
+      213: -8272950375710590612
+    second: Asset_Blockouts_11
+  - first:
+      213: 82226665680916560
+    second: Asset_Blockouts_12
+  - first:
+      213: -842658094236218916
+    second: Asset_Blockouts_13
+  - first:
+      213: 1513535113186073045
+    second: Asset_Blockouts_14
+  - first:
+      213: -549989133814398405
+    second: Asset_Blockouts_15
+  - first:
+      213: -6215638588934395967
+    second: Asset_Blockouts_16
+  - first:
+      213: -529898367066161857
+    second: Asset_Blockouts_17
+  - first:
+      213: -3461010206241332746
+    second: Asset_Blockouts_18
+  - first:
+      213: -558618518854887095
+    second: Asset_Blockouts_19
+  - first:
+      213: -8138454304311256644
+    second: Asset_Blockouts_20
+  - first:
+      213: 7078774000609071333
+    second: Asset_Blockouts_21
+  - first:
+      213: -8118075876694137463
+    second: Asset_Blockouts_22
+  - first:
+      213: -459374085517262033
+    second: Asset_Blockouts_23
+  - first:
+      213: -4684163762903831493
+    second: Asset_Blockouts_24
+  - first:
+      213: -8477167364893781638
+    second: Asset_Blockouts_25
+  - first:
+      213: -3910833338143296632
+    second: Asset_Blockouts_26
+  - first:
+      213: -8825950153464829073
+    second: Asset_Blockouts_27
+  - first:
+      213: -1396949232060427254
+    second: Asset_Blockouts_28
+  - first:
+      213: -4177975329784003035
+    second: Asset_Blockouts_29
+  - first:
+      213: -6404330704244036691
+    second: Asset_Blockouts_30
+  - first:
+      213: 6257217947405719577
+    second: Asset_Blockouts_31
+  - first:
+      213: -2401661830709743475
+    second: Asset_Blockouts_32
+  - first:
+      213: 316476959017871717
+    second: Asset_Blockouts_33
+  - first:
+      213: 9166880310219765845
+    second: Asset_Blockouts_34
+  - first:
+      213: -6834960637350315576
+    second: Asset_Blockouts_35
+  - first:
+      213: -518664295675850877
+    second: Asset_Blockouts_36
+  - first:
+      213: 5867935231494064251
+    second: Asset_Blockouts_37
+  - first:
+      213: 527875059059802228
+    second: Asset_Blockouts_38
+  - first:
+      213: 33418728461781719
+    second: Asset_Blockouts_39
+  - first:
+      213: 7497480864223876515
+    second: Asset_Blockouts_40
+  - first:
+      213: -5488186600164338940
+    second: Asset_Blockouts_41
+  - first:
+      213: 776027924241470164
+    second: Asset_Blockouts_42
+  - first:
+      213: 6556461524249238023
+    second: Asset_Blockouts_43
+  - first:
+      213: 9030128940910642079
+    second: Asset_Blockouts_44
+  - first:
+      213: 2290394866860655359
+    second: Asset_Blockouts_45
+  - first:
+      213: -5002145160964373637
+    second: Asset_Blockouts_46
+  - first:
+      213: -8111245189606918435
+    second: Asset_Blockouts_47
+  - first:
+      213: 5347659267609309347
+    second: Asset_Blockouts_48
+  - first:
+      213: -7795623272544301000
+    second: Asset_Blockouts_49
+  - first:
+      213: 8358116203303929059
+    second: Asset_Blockouts_50
+  - first:
+      213: -3840631645853459185
+    second: Asset_Blockouts_51
+  - first:
+      213: -2043825143182842613
+    second: Asset_Blockouts_52
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 275
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Asset_Blockouts_2
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af5ae17ca54e0370800000000000000
+      internalID: 8290640570983538592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_3
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8506718334b75060800000000000000
+      internalID: 6942215483923236237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_4
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8d0c9f2370889a0800000000000000
+      internalID: -6230722168947156791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_5
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea664ae0501f9d1c0800000000000000
+      internalID: -4478283350420461906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_6
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91808d722cd3495b0800000000000000
+      internalID: -5362593352189999079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_7
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e017334300762f740800000000000000
+      internalID: 5184319371630309646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_9
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c43a47a5b0d3660800000000000000
+      internalID: 7367057048579820652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_10
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23be2fa1f849a4290800000000000000
+      internalID: -7905342853542122702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_11
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 2478
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69f55b1773903d80800000000000000
+      internalID: -8272950375710590612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_12
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 2203
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050d9fe77b0242100800000000000000
+      internalID: 82226665680916560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_13
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd941f98de64e44f0800000000000000
+      internalID: -842658094236218916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_14
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d959889a28210510800000000000000
+      internalID: 1513535113186073045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_15
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b320ba8fbcb0e58f0800000000000000
+      internalID: -549989133814398405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_16
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7ea5e92ad9db9a0800000000000000
+      internalID: -6215638588934395967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_17
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d36ff1e3c65a8f0800000000000000
+      internalID: -529898367066161857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_18
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1ebfcfd8508ffc0800000000000000
+      internalID: -3461010206241332746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_19
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94913b2ba636f38f0800000000000000
+      internalID: -558618518854887095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_20
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb957cafde66e0f80800000000000000
+      internalID: -8138454304311256644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_21
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 1928
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e01397d27bdc3260800000000000000
+      internalID: 7078774000609071333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_22
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 1653
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9856af5600dc65f80800000000000000
+      internalID: -8118075876694137463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_23
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2349bdf3b9ff99f0800000000000000
+      internalID: -459374085517262033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_24
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c2c5a10e18efeb0800000000000000
+      internalID: -4684163762903831493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_25
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71d8f1123d0b5a80800000000000000
+      internalID: -8477167364893781638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_26
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883b638accde9b9c0800000000000000
+      internalID: -3910833338143296632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_27
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6bac69e81de38580800000000000000
+      internalID: -8825950153464829073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_28
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0498c5231a0d9ce0800000000000000
+      internalID: -1396949232060427254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_29
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52601ebc299d406c0800000000000000
+      internalID: -4177975329784003035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_30
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab2865f72f3f17a0800000000000000
+      internalID: -6404330704244036691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_31
+      rect:
+        serializedVersion: 2
+        x: 4675
+        y: 1378
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918115d229a16d650800000000000000
+      internalID: 6257217947405719577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_32
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d807eed1a459baed0800000000000000
+      internalID: -2401661830709743475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_33
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5692bd11e1a546400800000000000000
+      internalID: 316476959017871717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_34
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558fb2de21d473f70800000000000000
+      internalID: 9166880310219765845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_35
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9f4f473875521a0800000000000000
+      internalID: -6834960637350315576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_36
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f009232955dc8f0800000000000000
+      internalID: -518664295675850877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_37
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78043ed0081f6150800000000000000
+      internalID: 5867935231494064251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_38
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4704c05c193635700800000000000000
+      internalID: 527875059059802228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_39
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da4fce082ab67000800000000000000
+      internalID: 33418728461781719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_40
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 828
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a55a566f176c0860800000000000000
+      internalID: 7497480864223876515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_41
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 553
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40355246d5b06d3b0800000000000000
+      internalID: -5488186600164338940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_43
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a5468c40b3dfa50800000000000000
+      internalID: 6556461524249238023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_44
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9304f69d66715d70800000000000000
+      internalID: 9030128940910642079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_45
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff28b921ffd19cf10800000000000000
+      internalID: 2290394866860655359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_46
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7387c58a7fc49ab0800000000000000
+      internalID: -5002145160964373637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_48
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0bda155c3b63a40800000000000000
+      internalID: 5347659267609309347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_49
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8309a35cfe160d390800000000000000
+      internalID: -7795623272544301000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_50
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e40e59576efdf370800000000000000
+      internalID: 8358116203303929059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts_51
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 278
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0dd7cbddd553bac0800000000000000
+      internalID: -3840631645853459185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

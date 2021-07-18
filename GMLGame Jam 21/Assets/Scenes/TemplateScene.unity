@@ -893,3 +893,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106005f4893ab8348a9f9d6a1f6c1296, type: 3}
+--- !u!1001 &2024543988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 270906792, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 270906793, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 270906793, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959418, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_Name
+      value: HitchedVine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261057490959419, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261058509560497, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408261058509560497, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ead9d61ae60bcb4fa2845384a25b1cf, type: 3}

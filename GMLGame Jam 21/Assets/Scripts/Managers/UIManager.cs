@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoSingleton<UIManager>
-{
+public class UIManager : MonoSingleton<UIManager> {
+    [Header("Input UI")]
     public float alphaWhileUsing = 0.5f;          // the alpha value the image will have while it is in use
     Image climbDownImage;
     Image climbUpImage;
@@ -13,8 +13,16 @@ public class UIManager : MonoSingleton<UIManager>
     Image jumpImage;
     Image moveLeftImage;
 
+    [Header("Reset UI")]
+    Image resetCircle;
+    IEnumerator resetCircleIncrease;
+    IEnumerator resetCircleDecrease;
 
-    
+    float resetCircleMaxTime = 1;
+    const float MAX_RESET_IMAGE_SCALE = 42;
+    bool terminateNestedRoutine = false;
+
+
 
 
     protected override void Awake() {
@@ -24,8 +32,7 @@ public class UIManager : MonoSingleton<UIManager>
         moveRightImage = GameObject.Find("MoveRightImage").GetComponent<Image>();
         jumpImage = GameObject.Find("JumpImage").GetComponent<Image>();
         moveLeftImage = GameObject.Find("MoveLeftImage").GetComponent<Image>();
-
-
+        resetCircle = GameObject.Find("ResetCircle").GetComponent<Image>();
     }
     public void UsedClimbDown() {
         SetImageAlpha(climbDownImage, alphaWhileUsing);
@@ -46,9 +53,9 @@ public class UIManager : MonoSingleton<UIManager>
         SetImageAlpha(moveLeftImage, alphaWhileUsing);
     }
 
-
     public void ResetUI() {
         ResetInputIcons();
+        ResetResetCircle();
     }
 
 
@@ -58,8 +65,6 @@ public class UIManager : MonoSingleton<UIManager>
         icon.color = newAlphaColor;
     }
 
-
-
     private void ResetInputIcons() {
         SetImageAlpha(climbDownImage, 1);
         SetImageAlpha(climbUpImage, 1);
@@ -67,6 +72,72 @@ public class UIManager : MonoSingleton<UIManager>
         SetImageAlpha(jumpImage, 1);
         SetImageAlpha(moveLeftImage, 1);
 
+    }
+    private void ResetResetCircle() {
+        resetCircleIncrease = null;
+        resetCircleDecrease = null;
+        resetCircle.transform.localScale = Vector3.zero;
+    }
+
+    public void StartResetImage(float time) {
+        StartCoroutine(StartResetImageRoutine(time));
+    }
+
+    public IEnumerator StartResetImageRoutine(float time) {
+        if (resetCircleDecrease != null) {
+            StopCoroutine(resetCircleDecrease);
+        }
+
+        resetCircleMaxTime = time;
+        terminateNestedRoutine = false;
+        float currentScale = resetCircle.transform.localScale.x;
+        float scaleLeft = MAX_RESET_IMAGE_SCALE - currentScale;
+        float timeForOneScaleUnit = resetCircleMaxTime / MAX_RESET_IMAGE_SCALE;
+        float timeForCurrentScaleToMaxScale = scaleLeft * timeForOneScaleUnit;
+        Vector3 startScale = resetCircle.transform.localScale;
+        Vector3 targetScale = new Vector3(MAX_RESET_IMAGE_SCALE, MAX_RESET_IMAGE_SCALE, 0);
+
+        resetCircleIncrease = SetResetCircle(startScale, targetScale, timeForCurrentScaleToMaxScale);
+        //StartCoroutine(resetCircleIncrease);
+
+        // https://answers.unity.com/questions/1182632/problem-with-stopping-nested-coroutines-control-ne.html
+        IEnumerator nested = resetCircleIncrease;
+        while (!terminateNestedRoutine && nested.MoveNext()) {
+            yield return nested.Current;
+        }
+        if (!terminateNestedRoutine) {
+            GameManager.Instance.ResetLevel();
+        }
+    }
+    public void StopResetImage() {
+        if (resetCircleIncrease != null) {
+            StopCoroutine(resetCircleIncrease);
+            //resetCircleIncrease = null;
+            terminateNestedRoutine = true;
+        }
+
+        float scaleLeft = resetCircle.transform.localScale.x;
+        float timeForOneScaleUnit = resetCircleMaxTime / MAX_RESET_IMAGE_SCALE;
+        float timeForCurrentScaleToMaxScale = scaleLeft * timeForOneScaleUnit;
+        Vector3 startScale = resetCircle.transform.localScale;
+
+        resetCircleDecrease = SetResetCircle(startScale, Vector3.zero, timeForCurrentScaleToMaxScale);
+        StartCoroutine(resetCircleDecrease);
+    }
+
+    
+
+    IEnumerator SetResetCircle(Vector3 startScale, Vector3 targetScale, float moveTime) {
+        float time = 0;
+        while (time < moveTime) {
+            resetCircle.transform.localScale = Vector3.Lerp(startScale, targetScale, time / moveTime);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        print("Complete");
+        resetCircle.transform.localScale = targetScale;
+        
+        yield return null;
     }
 
 }

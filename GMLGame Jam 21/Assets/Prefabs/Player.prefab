@@ -324,12 +324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc42c8ec8379364781386ac079eb850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   pushForce: 40
   climbSpeed: 2.5
   ropeGrabForce: 250
-  attached: 0
-  attachedTo: {fileID: 0}
 --- !u!1 &1920876419
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 700
+  vineJumpMultiplier: 0.5
+  canJumpFromVine: 1
   movementSmoothing: 0.05
   climbSpeed: 10
   airControl: 1
@@ -606,7 +605,6 @@ MonoBehaviour:
     m_Bits: 2304
   groundCheck: {fileID: 8045818811042049736}
   autoResetLevel: 1
-  canJumpFromRope: 0
   isGrounded: 0
 --- !u!114 &8045818810433931617
 MonoBehaviour:
