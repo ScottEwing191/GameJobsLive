@@ -148,4 +148,6 @@ public class PhysicsPlatforms2D : MonoBehaviour {
         isWaitTimeUp = true;
     }
 
+    
+
 }

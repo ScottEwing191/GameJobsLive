@@ -10,22 +10,30 @@ public class PlayerSounds : MonoBehaviour {
     private Animator anim;
     private CharacterController2D controller;           // To check if the player is grounded
 
+    // === Properties ===
+
+    public AudioSource ClimbingSource {
+        get { return climbingSource; }
+        set { climbingSource = value; }
+    }
+
+
     private void Start() {
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController2D>();
     }
 
     private void Climb() {
-        // NOT WORKING SOUND DOEST STOP WHEN THE ANIMATION DOES. aLSO SOUND DOESNT PLAY WHEN GOING DOWN
-        if (anim.speed != 0) {
-            if (!climbingSource.isPlaying) {
-                climbingSource.Play();
-                
-
-            }
+        if (!climbingSource.isPlaying) {
+            climbingSource.time = Random.Range(0f, climbingSource.clip.length);
+            climbingSource.volume = 0.6f;
+            climbingSource.Play();
         }
-        else {
-            climbingSource.Pause();
+    }
+
+    private void IdleClimb() {
+        if (climbingSource.isPlaying) {
+            climbingSource.Stop();
         }
     }
 
@@ -33,14 +41,15 @@ public class PlayerSounds : MonoBehaviour {
         climbingSource.Stop();
         if (!fireDeathSource.isPlaying) {
             fireDeathSource.Play();
+            fireDeathSource.volume = 0.3f;
 
         }
     }
 
-    private void Jump() {
+    private void JumpSound() {
         if (!jumpSource.isPlaying) {
             jumpSource.Play();
-
+            jumpSource.volume = 0.2f;
         }
     }
 
