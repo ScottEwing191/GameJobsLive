@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8045818810433931617, guid: f69f2331678912744bfd7355e41c498a, type: 3}
       propertyPath: shouldLimitKeyPresses
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8045818810433931647, guid: f69f2331678912744bfd7355e41c498a, type: 3}
       propertyPath: m_LocalPosition.x
