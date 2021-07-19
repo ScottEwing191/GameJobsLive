@@ -57,7 +57,9 @@ public class PhysicsPlatforms2D : MonoBehaviour {
 
     }
     private void Update() {
-
+        if (Input.GetKeyDown(KeyCode.M)) {
+            Reset();
+        }
     }
     // Update is called once per frame
     void FixedUpdate() {
@@ -146,6 +148,12 @@ public class PhysicsPlatforms2D : MonoBehaviour {
         isWaitTimeUp = false;
         yield return new WaitForSeconds(timeToWait);
         isWaitTimeUp = true;
+    }
+
+    public void Reset() {
+        rb.velocity = Vector2.zero;
+        transform.position = startPosition;
+        Awake();
     }
 
 }

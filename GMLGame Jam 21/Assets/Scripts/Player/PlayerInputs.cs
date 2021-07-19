@@ -13,7 +13,7 @@ public class PlayerInputs : MonoBehaviour {
     private bool hasReleasedLeft = false;
     private bool hasPressedJump = false;
 
-    
+
     private float horizontalMove = 0f;
     private float climbUpMove = 0f;
     private float climbDownMove = 0f;
@@ -32,8 +32,10 @@ public class PlayerInputs : MonoBehaviour {
         }
         else { horizontalMove = 0; }        // stops the hozizontalMove value getting bigger every frame the key is held down
         if (Input.GetButtonUp("HorizontalLeft") && shouldLimitKeyPresses) {
-            controller.HasReleasedLeft = true;
-            UIManager.Instance.UsedLeft();
+            if (!controller.RopeControls.Attached) {        // dont count swinging on the rope towards limititing inputs
+                controller.HasReleasedLeft = true;
+                UIManager.Instance.UsedLeft();
+            }
 
         }
 
@@ -44,17 +46,24 @@ public class PlayerInputs : MonoBehaviour {
         }
         else { horizontalMove += 0; }
         if (Input.GetButtonUp("HorizontalRight") && shouldLimitKeyPresses) {
-            controller.HasReleasedRight = true;
-            UIManager.Instance.UsedRight();
+            if (!controller.RopeControls.Attached) {        // dont count swinging on the rope towards limititing inputs
+                controller.HasReleasedRight = true;
+                UIManager.Instance.UsedRight();
+            }
 
         }
 
         // Jump Input
         //if (Input.GetButtonDown("Jump")) {
-        if (Input.GetButtonDown("VerticalUp")) {
-
-            jump = true;
+        //if (Input.GetButton("Jump")) {
+        if (Input.GetButton("VerticalUp")) {
+                jump = true;
         }
+        if (Input.GetButtonUp("VerticalUp") && !controller.RopeControls.Attached && !controller.IsTouchingClimable && shouldLimitKeyPresses) {
+            controller.HasJumped = true;
+            UIManager.Instance.UsedJump();
+        }
+
 
         //Climb Up
         climbUpMove = Input.GetAxisRaw("VerticalUp");
@@ -62,25 +71,29 @@ public class PlayerInputs : MonoBehaviour {
 
         // Reset Input
         if (Input.GetButtonDown("Reset")) {
-            resetTimer = StartCoroutine(ResetTimer());
+            //resetTimer = StartCoroutine(ResetTimer());
+            UIManager.Instance.StartResetImage(resetTime);
+
         }
-        if (Input.GetButtonUp("Reset") && isResetTimerRoutineRunning) {
-            StopCoroutine(resetTimer);
+        //if (Input.GetButtonUp("Reset") && isResetTimerRoutineRunning) {
+        if (Input.GetButtonUp("Reset")) {
+            //StopCoroutine(resetTimer);
+            UIManager.Instance.StopResetImage();
         }
 
     }
 
-    void FixedUpdate() { 
+    void FixedUpdate() {
         controller.Move(horizontalMove * Time.fixedDeltaTime, climbUpMove, climbDownMove, jump);
         jump = false;
     }
 
-    IEnumerator ResetTimer() {
+    /*IEnumerator ResetTimer() {
         isResetTimerRoutineRunning = true;
         yield return new WaitForSeconds(resetTime);
         ResetPlayer();
         isResetTimerRoutineRunning = false;
-    }
+    }*/
 
     private void ResetPlayer() {
         controller.ResetPlayer();
@@ -100,6 +113,14 @@ public class PlayerInputs : MonoBehaviour {
         if (Input.GetButtonUp("VerticalDown") && down == false) {
             down = true;
             UIManager.Instance.UsedClimbDown();                         // tell the UI Manager to grey out the climb up icon
+
+        }
+    }
+
+    public void IsPlayerStillClimbingUp(ref bool up) {
+        if (Input.GetButtonUp("VerticalUp") && up == false) {           // only need to check if the has still not stopped climbing i.e. up is false
+            up = true;
+            UIManager.Instance.UsedClimbUp();                           // tell the UI Manager to grey out the climb up icon
 
         }
     }
