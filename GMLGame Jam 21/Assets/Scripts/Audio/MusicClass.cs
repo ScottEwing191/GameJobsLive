@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class MusicClass : MonoBehaviour
 {
-    private AudioSource _audioSource;
+    private AudioSource audioSource;
+
+    private static MusicClass instance; 
+
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
-        _audioSource = GetComponent<AudioSource>();
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayMusic()
     {
-        if (_audioSource.isPlaying) return;
-        _audioSource.Play();
+        if (!audioSource.isPlaying) return;
+        audioSource.Play();
     }
 
     public void StopMusic()
     {
-        _audioSource.Stop();
+        audioSource.Stop();
     }
 }
