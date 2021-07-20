@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Water
   - Music
+  - Water
   - SpinningPlatform
   - Rope
   layers:
@@ -20,7 +20,7 @@ TagManager:
   - Ground
   - Player
   - Climbable
-  - Platforms
+  - 
   - 
   - 
   - 

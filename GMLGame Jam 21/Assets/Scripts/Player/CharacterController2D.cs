@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class CharacterController2D : MonoBehaviour {
     [SerializeField] private float jumpForce = 400f;                            // Amount of force added when the player jumps.
@@ -105,6 +106,7 @@ public class CharacterController2D : MonoBehaviour {
         if (ropeControls.Attached && playerInputs.shouldLimitKeyPresses) {
             //playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
             playerInputs.IsPlayerStillClimbingUp(ref hasClimbedUp);     // Player Cant Climb Down now
+            //playerInputs.IsPlayerStillClimbingUp(ref hasJumped);     // Player Cant Climb Down now and player can only jump or
 
         }
 
@@ -122,8 +124,11 @@ public class CharacterController2D : MonoBehaviour {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
         for (int i = 0; i < colliders.Length; i++) {
             if (colliders[i].gameObject != gameObject) {
-                isGrounded = true;
-                anim.SetBool("IsJumping", false);
+                if (!ropeControls.Attached) {
+                    isGrounded = true;
+                    anim.SetBool("IsJumping", false);
+
+                }
 
             }
         }
@@ -131,32 +136,12 @@ public class CharacterController2D : MonoBehaviour {
     }
 
 
-    private void FixedUpdate() {
-        /*//bool wasGrounded = m_Grounded;
-        isGrounded = false;
-        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
-        for (int i = 0; i < colliders.Length; i++) {
-            if (colliders[i].gameObject != gameObject) {
-                isGrounded = true;
-                anim.SetBool("IsJumping", false);
-
-            }
-        }*/
-
-
-    }
-
-
+    //This is the version where the player can jump while the jump button is pressed down.
+    //they can also jump and climb in the same level
     public void Move(float move, float climbUp, float climbDown, bool jump) {
 
         // Do Rope Stuff
         if (ropeControls.Attached) {
-
-            if (jump && playerInputs.shouldLimitKeyPresses) {
-                hasJumped = true;
-                UIManager.Instance.UsedJump();
-            }
             //Changing Controls so that instead of climbing down the vine the player jumps off.
             // This means that the jump inpu no longer does anything
             // and the climb Down input jumps off input jumps off
@@ -173,95 +158,32 @@ public class CharacterController2D : MonoBehaviour {
 
             SetClimingAnimations(climbUp, climbDown);
 
-            // Check if player is allowed to climb up or down. and if not set the climbUp/Down value to 0
-            //if (climbUp > 0 && hasClimbedUp) {
-            //    climbUp = 0;
-           // }
-
-            // DONT DELETE Old version where the player is able to climb down the ladder
-            /*if (climbDown < 0 && hasClimbedDown) {
-                hasClimbedDown = false;
-                UIManager.Instance.UsedClimbDown();
-                climbDown = 0;
-            }*/
-
-            
-
             ropeControls.PlayerRopeMovement(move, climbUp, climbDown, jump);
-            /*if (jump && !isTouchingClimable && !hasJumped && canJumpFromVine) {
-                Jump(true, vineJumpMultiplier);
-            }*/
-
-            if (jump && !isTouchingClimable && canJumpFromVine && playerInputs.shouldLimitKeyPresses) {
-                hasClimbedDown = true;
-                UIManager.Instance.UsedClimbDown();
+            if (jump && !isTouchingClimable && canJumpFromVine) {
+                if (playerInputs.shouldLimitKeyPresses) {
+                    hasClimbedDown = true;
+                    UIManager.Instance.UsedClimbDown();
+                }
                 Jump(true, vineJumpMultiplier);
             }
-
-
-            // Set Climb limit Variables
-            /*if (playerInputs.shouldLimitKeyPresses) {
-                playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
-            }*/
-            /*if (climbUp > 0 ) {
-                hasClimbedUp = true;
-                UIManager.Instance.UsedClimbUp();
-            }
-            if (climbDown < 0) {
-                hasClimbedDown = true;
-                UIManager.Instance.UsedClimbDown();
-            }*/
-
             return;
         }
         else {
             isClimbing = false;
             anim.SetBool("IsClimbing", false);
-            //playerSounds.ClimbingSource.Stop();         // Stop Climbing Sound
-
         }
 
+        TouchingClimable(climbUp, climbDown);
+        HorizontalMovement(move);
+        
+        // If the player should jump...
+        if (isGrounded && jump && !isTouchingClimable && !hasJumped) {
 
-        if (isTouchingClimable) {
-
-            // If the player touched the ladder while not on the ground. Immedielty switch to the climbing animation
-            if (!isGrounded) {
-                isClimbing = true;
-                anim.Play("Climb");
-                anim.SetBool("IsClimbing", true);
-            }
-
-            float inputVertical = 0;
-            if (!hasClimbedUp) {             // Has the player already climbed up and stopped climbing up
-                inputVertical += climbUp;
-            }
-            if (!hasClimbedDown) {          //Has the player already climbed down and stopped climbing down
-                inputVertical += climbDown;
-            }
-
-            /*if (inputVertical != 0) {
-                anim.speed = 1;
-                anim.SetBool("IsClimbing", true);
-                isClimbing = true;
-            }
-            else if (isClimbing) {
-                anim.speed = 0;
-            }*/
-
-            SetClimingAnimations(climbUp, climbDown);
-
-            rb2D.velocity = new Vector2(rb2D.velocity.x, inputVertical * climbSpeed);
-            rb2D.gravityScale = 0;
+            Jump();
         }
-        else {
-            rb2D.gravityScale = 3;       // reset the gravity when the player loses contact with the ladder 
-            isClimbing = false;
-            anim.SetBool("IsClimbing", false);
-            anim.speed = 1;
-            // Stop Climbing Sound
-            playerSounds.ClimbingSource.Stop();
-        }
+    }
 
+    private void HorizontalMovement(float move) {
         //only control the player if grounded or airControl is turned on
         if (isGrounded || airControl) {
 
@@ -280,14 +202,6 @@ public class CharacterController2D : MonoBehaviour {
                 anim.SetBool("IsRunning", false);
 
             }
-
-            /*if (velocity.x > 0.1f || velocity.x < -0.1f) {
-                anim.SetBool("IsRunning", true);
-            }
-            else {
-                anim.SetBool("IsRunning", false);
-
-            }*/
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !isFacingRight) {
                 // ... flip the player.
@@ -299,29 +213,56 @@ public class CharacterController2D : MonoBehaviour {
                 Flip();
             }
         }
-        // If the player should jump...
-        if (isGrounded && jump && !isTouchingClimable && !hasJumped) {
-            
-            Jump();
-        }
     }
 
-    private void Jump(bool ignoreJumpLimit = false ,float jumpForceMultiplier = 1) {      // jump force multiplier can be used if the if a different jump force is required when
+    private void Jump(bool ignoreJumpLimit = false, float jumpForceMultiplier = 1) {      // jump force multiplier can be used if the if a different jump force is required when
         print("Jump");                                               // .. jumping from certain surfaces eg. ropes. Also ignore jumps from rope
         bool test = anim.GetBool("IsJumping");
         if (isGrounded) {
             //anim.Play("Idle");
             anim.StopPlayback();
-        }   
+        }
         // Add a vertical force to the player.
         isGrounded = false;
         rb2D.AddForce(new Vector2(0f, jumpForce * jumpForceMultiplier));
         anim.Play("Jump");
         anim.SetBool("IsJumping", true);
         if (playerInputs.shouldLimitKeyPresses && !ignoreJumpLimit) {
-            //hasJumped = true;
-            //UIManager.Instance.UsedJump();
+            hasJumped = true;
+            UIManager.Instance.UsedJump();
+        }
+    }
 
+    private void TouchingClimable(float climbUp, float climbDown) {
+        if (isTouchingClimable) {
+
+            // If the player touched the ladder while not on the ground. Immedielty switch to the climbing animation
+            if (!isGrounded) {
+                isClimbing = true;
+                anim.Play("Climb");
+                anim.SetBool("IsClimbing", true);
+            }
+
+            float inputVertical = 0;
+            if (!hasClimbedUp) {             // Has the player already climbed up and stopped climbing up
+                inputVertical += climbUp;
+            }
+            if (!hasClimbedDown) {          //Has the player already climbed down and stopped climbing down
+                inputVertical += climbDown;
+            }
+
+            SetClimingAnimations(climbUp, climbDown);
+
+            rb2D.velocity = new Vector2(rb2D.velocity.x, inputVertical * climbSpeed);
+            rb2D.gravityScale = 0;
+        }
+        else {
+            rb2D.gravityScale = 3;       // reset the gravity when the player loses contact with the ladder 
+            isClimbing = false;
+            anim.SetBool("IsClimbing", false);
+            anim.speed = 1;
+            // Stop Climbing Sound
+            playerSounds.ClimbingSource.Stop();
         }
     }
 
@@ -360,7 +301,7 @@ public class CharacterController2D : MonoBehaviour {
 
         ropeControls.Detach();
         transform.position = startPosition;             // Reset Player position
-        rb2D.velocity = Vector3.zero;       
+        rb2D.velocity = Vector3.zero;
         playerInputs.enabled = true;                    // Allow the player to make inputs
         isDead = false;
         anim.Play("Idle");

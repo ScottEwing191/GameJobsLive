@@ -6,21 +6,21 @@ using UnityEngine;
 public class FadeIn : MonoBehaviour
 {
     [SerializeField]
-    private int fadeInTime = 3;
-    private AudioSource audioSource;
+    private int m_FadeInTime = 3;
+    private AudioSource m_AudioSource;
 
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
 
     private void Update()
     {
-        if (audioSource.volume < 1)
+        if (m_AudioSource.volume < 1)
         {
-            audioSource.volume = audioSource.volume + (Time.deltaTime / (fadeInTime + 1));
+            m_AudioSource.volume = m_AudioSource.volume + (Time.deltaTime / (m_FadeInTime + 1));
         }
         else
         {

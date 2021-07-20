@@ -54,15 +54,22 @@ public class PlayerInputs : MonoBehaviour {
         }
 
         // Jump Input
-        //if (Input.GetButtonDown("Jump")) {
-        //if (Input.GetButton("Jump")) {
+
+        // This version is for the version where the player can camp and climp in the same level. The player will also continue to jump while the ...
+        // ... jump button is held
         if (Input.GetButton("VerticalUp")) {
-                jump = true;
+            jump = true;
         }
         if (Input.GetButtonUp("VerticalUp") && !controller.RopeControls.Attached && !controller.IsTouchingClimable && shouldLimitKeyPresses) {
             controller.HasJumped = true;
             UIManager.Instance.UsedJump();
         }
+
+        // This version is for the only jump or climb not both version
+        /*if (Input.GetButtonDown("VerticalUp")) {
+            jump = true;
+
+        }*/
 
 
         //Climb Up
