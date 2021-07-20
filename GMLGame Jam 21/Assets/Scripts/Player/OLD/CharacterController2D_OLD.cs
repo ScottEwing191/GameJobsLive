@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class CharacterController2D : MonoBehaviour {
+public class CharacterController2D_OLD : MonoBehaviour {
     [SerializeField] private float jumpForce = 400f;                            // Amount of force added when the player jumps.
     [Range(0.01f, 1)] [SerializeField] private float vineJumpMultiplier = 1;    // Modifies the jump force the player gets when jumping from a vine
     [SerializeField] private bool canJumpFromVine = false;
@@ -158,7 +158,23 @@ public class CharacterController2D : MonoBehaviour {
 
             SetClimingAnimations(climbUp, climbDown);
 
+            // Check if player is allowed to climb up or down. and if not set the climbUp/Down value to 0
+            //if (climbUp > 0 && hasClimbedUp) {
+            //    climbUp = 0;
+            // }
+
+            // DONT DELETE Old version where the player is able to climb down the ladder
+            /*if (climbDown < 0 && hasClimbedDown) {
+                hasClimbedDown = false;
+                UIManager.Instance.UsedClimbDown();
+                climbDown = 0;
+            }*/
+
             ropeControls.PlayerRopeMovement(move, climbUp, climbDown, jump);
+            /*if (jump && !isTouchingClimable && !hasJumped && canJumpFromVine) {
+                Jump(true, vineJumpMultiplier);
+            }*/
+
             if (jump && !isTouchingClimable && canJumpFromVine) {
                 if (playerInputs.shouldLimitKeyPresses) {
                     hasClimbedDown = true;
@@ -166,6 +182,21 @@ public class CharacterController2D : MonoBehaviour {
                 }
                 Jump(true, vineJumpMultiplier);
             }
+
+
+            // Set Climb limit Variables
+            /*if (playerInputs.shouldLimitKeyPresses) {
+                playerInputs.IsPlayerStillClimbing(ref hasClimbedUp, ref hasClimbedDown);
+            }*/
+            /*if (climbUp > 0 ) {
+                hasClimbedUp = true;
+                UIManager.Instance.UsedClimbUp();
+            }
+            if (climbDown < 0) {
+                hasClimbedDown = true;
+                UIManager.Instance.UsedClimbDown();
+            }*/
+
             return;
         }
         else {
@@ -173,7 +204,10 @@ public class CharacterController2D : MonoBehaviour {
             anim.SetBool("IsClimbing", false);
         }
 
+
         TouchingClimable(climbUp, climbDown);
+
+
         HorizontalMovement(move);
         
         // If the player should jump...
@@ -230,6 +264,7 @@ public class CharacterController2D : MonoBehaviour {
         if (playerInputs.shouldLimitKeyPresses && !ignoreJumpLimit) {
             hasJumped = true;
             UIManager.Instance.UsedJump();
+
         }
     }
 
