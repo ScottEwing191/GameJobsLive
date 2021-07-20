@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Water
   - Music
-  - SpinningPlatform
-  - Rope
   layers:
   - Default
   - TransparentFX
@@ -19,8 +16,8 @@ TagManager:
   - 
   - Ground
   - Player
-  - Climbable
-  - Platforms
+  - 
+  - 
   - 
   - 
   - 
