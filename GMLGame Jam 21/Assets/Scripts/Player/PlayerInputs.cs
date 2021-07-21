@@ -80,10 +80,11 @@ public class PlayerInputs : MonoBehaviour {
 
         // Reset Input
         if (Input.GetButtonDown("Reset")) {
-            UIManager.Instance.StartResetImage(resetTime);
+            GameManager.Instance.ResetLevel();
+            //UIManager.Instance.StartResetImage(resetTime);
         }
         if (Input.GetButtonUp("Reset")) {
-            UIManager.Instance.StopResetImage();
+            //UIManager.Instance.StopResetImage();
         }
 
     }
