@@ -9,15 +9,19 @@ public class PlayerInputs : MonoBehaviour {
     [SerializeField] private float resetTime = 0.5f;      // the time the reset button is held for before the level resets
     [SerializeField] public bool shouldLimitKeyPresses = true;
 
-    private bool hasReleasedRight = false;
-    private bool hasReleasedLeft = false;
-    private bool hasPressedJump = false;
+    //private bool hasReleasedRight = false;
+    //private bool hasReleasedLeft = false;
+    //private bool hasPressedJump = false;
 
 
     private float horizontalMove = 0f;
     private float climbUpMove = 0f;
     private float climbDownMove = 0f;
     private bool jump = false;
+    private bool checkButtonDownForFixedUpdateInput = true;     // Need to use getbuttondown Input but the input is used in the Fixed update method 
+    // and passed into CharacterController2D. This means that it is possible for the keystroke to be detected one Update frame, overidden the next 
+    // and then used in fixed update the input will only be checked in th eupdate method if this bool is true. THis bool will then be set to false.
+    //  It gets set back to true in the fixed Update method
 
     private Coroutine resetTimer;
     private bool isResetTimerRoutineRunning = false;
@@ -54,37 +58,31 @@ public class PlayerInputs : MonoBehaviour {
         }
 
         // Jump Input
-
-        // This version is for the version where the player can camp and climp in the same level. The player will also continue to jump while the ...
-        // ... jump button is held
-        if (Input.GetButton("VerticalUp")) {
-            jump = true;
-        }
-        if (Input.GetButtonUp("VerticalUp") && !controller.RopeControls.Attached && !controller.IsTouchingClimable && shouldLimitKeyPresses) {
-            controller.HasJumped = true;
-            UIManager.Instance.UsedJump();
-        }
-
         // This version is for the only jump or climb not both version
-        /*if (Input.GetButtonDown("VerticalUp")) {
+        if (Input.GetButtonDown("VerticalUp")) {
             jump = true;
 
-        }*/
+        }
 
 
         //Climb Up
         climbUpMove = Input.GetAxisRaw("VerticalUp");
-        climbDownMove = Input.GetAxisRaw("VerticalDown");
+        // Climb down - Now that climb down is essentially just drop/jump off the vine I only want it too happen if the player presses the key...
+        // but dont want to change all the code to use a bool instead
+        if (Input.GetButtonDown("VerticalDown") && checkButtonDownForFixedUpdateInput) {      
+            climbDownMove = -1;
+            checkButtonDownForFixedUpdateInput = false; 
+
+        }
+        else if(checkButtonDownForFixedUpdateInput){
+            climbDownMove = 0;
+        }
 
         // Reset Input
         if (Input.GetButtonDown("Reset")) {
-            //resetTimer = StartCoroutine(ResetTimer());
             UIManager.Instance.StartResetImage(resetTime);
-
         }
-        //if (Input.GetButtonUp("Reset") && isResetTimerRoutineRunning) {
         if (Input.GetButtonUp("Reset")) {
-            //StopCoroutine(resetTimer);
             UIManager.Instance.StopResetImage();
         }
 
@@ -93,23 +91,13 @@ public class PlayerInputs : MonoBehaviour {
     void FixedUpdate() {
         controller.Move(horizontalMove * Time.fixedDeltaTime, climbUpMove, climbDownMove, jump);
         jump = false;
+        checkButtonDownForFixedUpdateInput = true;
     }
-
-    /*IEnumerator ResetTimer() {
-        isResetTimerRoutineRunning = true;
-        yield return new WaitForSeconds(resetTime);
-        ResetPlayer();
-        isResetTimerRoutineRunning = false;
-    }*/
 
     private void ResetPlayer() {
         controller.ResetPlayer();
     }
-    /*public void ResetInputs() {
-        hasReleasedLeft = false;
-        hasReleasedRight = false;
-        hasPressedJump = false;
-    }*/
+    
 
     public void IsPlayerStillClimbing(ref bool up, ref bool down) {
         if (Input.GetButtonUp("VerticalUp") && up == false) {           // only need to check if the has still not stopped climbing i.e. up is false

@@ -40,7 +40,10 @@ public class CharacterController2D : MonoBehaviour {
     private RopeControls ropeControls;
     private PlayerSounds playerSounds;
     private GameObject canvas;                  // Need to flip the canvas every time the player flipped when the direction changes
-
+    private Collision2D groundCollision;
+    [SerializeField] private Transform groundNormal;
+    [SerializeField] private Transform slopeLimit;      // the height of the contact point on the circle collider above which the game will assume the..
+                                                        // player is not touching a slope
 
 
     // === PROPERTIES ===
@@ -175,7 +178,7 @@ public class CharacterController2D : MonoBehaviour {
 
         TouchingClimable(climbUp, climbDown);
         HorizontalMovement(move);
-        
+
         // If the player should jump...
         if (isGrounded && jump && !isTouchingClimable && !hasJumped) {
 
@@ -186,10 +189,19 @@ public class CharacterController2D : MonoBehaviour {
     private void HorizontalMovement(float move) {
         //only control the player if grounded or airControl is turned on
         if (isGrounded || airControl) {
+            Vector3 targetVelocity = Vector3.zero;
+            if (isGrounded) {
+                targetVelocity = (Vector3)CalculateMoveDirection();
+            }
+            if (targetVelocity != Vector3.zero) {
+                targetVelocity = targetVelocity * move * 10;
+            }
+            else {
+                targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
 
+            }
 
             // Move the character by finding the target velocity
-            Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
             Vector3 velocity = Vector3.zero;
             // And then smoothing it out and applying it to the character
 
@@ -213,6 +225,47 @@ public class CharacterController2D : MonoBehaviour {
                 Flip();
             }
         }
+    }
+
+    private Vector2 CalculateMoveDirection() {
+        if (groundCollision == null || groundCollision.contactCount == 0) {
+            return Vector2.zero;
+        }
+        /*//List<ContactPoint2D> contactPoints = new List<ContactPoint2D>();
+        ContactPoint2D[] contactPoints = new ContactPoint2D[2];
+        groundCollision.GetContacts(contactPoints);
+        ContactPoint2D highestAcceptablePoint = new ContactPoint2D();
+        float highest = float.MinValue;
+        foreach (ContactPoint2D c in contactPoints) {
+            
+            if (c.point.y > slopeLimit.position.y) {
+                continue;
+            }
+            if (c.point.y < highest) {
+                highest = c.point.y;
+                highestAcceptablePoint = c;
+            }
+        }
+*/
+        ContactPoint2D highestAcceptablePoint =  groundCollision.GetContact(0);
+        if (highestAcceptablePoint.point.y > slopeLimit.position.y) {
+            return Vector2.zero;
+        }
+
+
+        //lowestPoint = groundCollision.GetContact(0);
+        Vector2 collisionNormal = highestAcceptablePoint.normal;
+        Vector2 perpindicular = Vector2.Perpendicular(-collisionNormal);        // - here makes the player move in the correct direction
+        Vector2 perpindiclarNormilized = perpindicular.normalized;
+        //groundNormal.position = transform.position +  (Vector3)(perpindiclarNormilized * 3);
+        //groundNormal.position = transform.position + (Vector3)(perpindicular * 1);
+        //groundNormal.position = point.point + perpindicular;
+        groundNormal.position = highestAcceptablePoint.point;
+
+
+
+        return perpindiclarNormilized;
+
     }
 
     private void Jump(bool ignoreJumpLimit = false, float jumpForceMultiplier = 1) {      // jump force multiplier can be used if the if a different jump force is required when
@@ -338,6 +391,14 @@ public class CharacterController2D : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.CompareTag("SpinningPlatform"))
             this.transform.parent = col.transform;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision) {
+      Type test = collision.otherCollider.GetType();
+        if (collision.otherCollider.GetType() == typeof(CircleCollider2D)) {
+            groundCollision = collision;
+
+        }
     }
 
     void OnCollisionExit2D(Collision2D col) {
