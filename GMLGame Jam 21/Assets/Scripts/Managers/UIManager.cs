@@ -27,11 +27,20 @@ public class UIManager : MonoSingleton<UIManager> {
 
     protected override void Awake() {
         base.Awake();
-        climbDownImage = GameObject.Find("ClimbDownImage").GetComponent<Image>();
+        /*climbDownImage = GameObject.Find("ClimbDownImage").GetComponent<Image>();
         climbUpImage = GameObject.Find("ClimbUpImage").GetComponent<Image>();
         moveRightImage = GameObject.Find("MoveRightImage").GetComponent<Image>();
         jumpImage = GameObject.Find("JumpImage").GetComponent<Image>();
         moveLeftImage = GameObject.Find("MoveLeftImage").GetComponent<Image>();
+        resetCircle = GameObject.Find("ResetCircle").GetComponent<Image>();*/
+    }
+
+    private void Start() {
+        climbDownImage = GameObject.Find("Player/Canvas/InputsPanel/ClimbDownImage").GetComponent<Image>();
+        climbUpImage = GameObject.Find("Player/Canvas/InputsPanel/ClimbUpImage").GetComponent<Image>();
+        moveRightImage = GameObject.Find("Player/Canvas/InputsPanel/MoveRightImage").GetComponent<Image>();
+        jumpImage = GameObject.Find("Player/Canvas/InputsPanel/JumpImage").GetComponent<Image>();
+        moveLeftImage = GameObject.Find("Player/Canvas/InputsPanel/MoveLeftImage").GetComponent<Image>();
         resetCircle = GameObject.Find("ResetCircle").GetComponent<Image>();
     }
     public void UsedClimbDown() {
