@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Asset_Blockouts_20
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -8138454304311256644, guid: 17362607041bc4d49b8814e29e0e5fca, type: 3}
+  m_Sprite: {fileID: -6941767410416021322, guid: 7be28e80b68e8474998bbc23059e885a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
