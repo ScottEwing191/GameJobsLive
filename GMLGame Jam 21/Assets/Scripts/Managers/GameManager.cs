@@ -25,9 +25,11 @@ public class GameManager : MonoSingleton<GameManager>
 
 
     public void ResetLevel() {
-        characterController2D.ResetPlayer();
-        UIManager.Instance.ResetUI();
-        ResetHitchedRopes();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        //characterController2D.ResetPlayer();
+        //UIManager.Instance.ResetUI();
+        //ResetHitchedRopes();
     }
 
     private void ResetHitchedRopes() {

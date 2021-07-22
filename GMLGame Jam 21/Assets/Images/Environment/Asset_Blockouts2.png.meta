@@ -125,84 +125,6 @@ TextureImporter:
   - first:
       213: 341789137951487089
     second: Asset_Blockouts2_40
-  - first:
-      213: 1614573020303282096
-    second: Asset_Blockouts2_41
-  - first:
-      213: 2312896458617859858
-    second: Asset_Blockouts2_42
-  - first:
-      213: 6278601420942008053
-    second: Asset_Blockouts2_43
-  - first:
-      213: -1215985296397710361
-    second: Asset_Blockouts2_44
-  - first:
-      213: 5697455038369970810
-    second: Asset_Blockouts2_45
-  - first:
-      213: -2607586063385099434
-    second: Asset_Blockouts2_46
-  - first:
-      213: -630231810296950495
-    second: Asset_Blockouts2_47
-  - first:
-      213: -5716567155046709602
-    second: Asset_Blockouts2_48
-  - first:
-      213: 7480273351518426690
-    second: Asset_Blockouts2_49
-  - first:
-      213: 4882614002553696464
-    second: Asset_Blockouts2_50
-  - first:
-      213: 6097215661277884297
-    second: Asset_Blockouts2_51
-  - first:
-      213: 2810869224384047322
-    second: Asset_Blockouts2_52
-  - first:
-      213: -9066498016842003192
-    second: Asset_Blockouts2_53
-  - first:
-      213: -828476134576541954
-    second: Asset_Blockouts2_54
-  - first:
-      213: 4480223644471666848
-    second: Asset_Blockouts2_55
-  - first:
-      213: -2060391250488919351
-    second: Asset_Blockouts2_56
-  - first:
-      213: -9031438963967230248
-    second: Asset_Blockouts2_57
-  - first:
-      213: 5495490083479723652
-    second: Asset_Blockouts2_58
-  - first:
-      213: 4960214709066283950
-    second: Asset_Blockouts2_59
-  - first:
-      213: -341763084652631471
-    second: Asset_Blockouts2_60
-  - first:
-      213: -3876472676439116722
-    second: Asset_Blockouts2_61
-  - first:
-      213: -7371922635226317115
-    second: Asset_Blockouts2_62
-  - first:
-      213: -2873755634408157213
-    second: Asset_Blockouts2_63
-  - first:
-      213: -3063951844001523571
-    second: Asset_Blockouts2_64
-  - first:
-      213: -6311078646915354658
-    second: Asset_Blockouts2_65
-  - first:
-      213: -1195833006225777900
-    second: Asset_Blockouts2_66
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -264,7 +186,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -276,7 +198,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -298,7 +232,7 @@ TextureImporter:
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -311,7 +245,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Blockouts2_2
+      name: Asset_Blockouts2_1
       rect:
         serializedVersion: 2
         x: 550
@@ -319,7 +253,28 @@ TextureImporter:
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c85d22a833f2190800000000000000
+      internalID: -7985106945921676154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_2
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1885
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,12 +290,12 @@ TextureImporter:
       name: Asset_Blockouts2_3
       rect:
         serializedVersion: 2
-        x: 825
+        x: 1375
         y: 1885
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -353,15 +308,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Blockouts2_5
+      name: Asset_Blockouts2_4
       rect:
         serializedVersion: 2
-        x: 1375
+        x: 1650
         y: 1885
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61e200299a68bfa0800000000000000
+      internalID: -5784756515457801873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_5
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1885
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -377,12 +353,12 @@ TextureImporter:
       name: Asset_Blockouts2_6
       rect:
         serializedVersion: 2
-        x: 1650
+        x: 2475
         y: 1885
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -395,15 +371,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Blockouts2_8
+      name: Asset_Blockouts2_7
       rect:
         serializedVersion: 2
-        x: 2200
+        x: 3025
         y: 1885
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23047056f6a314c0800000000000000
+      internalID: -4317924040876227797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_8
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1610
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -420,11 +417,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2475
-        y: 1885
+        y: 1610
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,11 +438,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3025
-        y: 1885
+        y: 1610
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -458,15 +455,183 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Blockouts2_19
+      name: Asset_Blockouts2_11
       rect:
         serializedVersion: 2
-        x: 2200
-        y: 1610
+        x: 0
+        y: 1335
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1af239d18d8ec60800000000000000
+      internalID: 7847759972228112846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_12
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1335
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa4b1eb698898460800000000000000
+      internalID: 7244471656618085039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_13
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1335
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc033a00746016030800000000000000
+      internalID: 3486074488584614093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_14
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1335
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5491a528414b07a80800000000000000
+      internalID: -8471072898904614587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_15
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1335
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed93ce96019732230800000000000000
+      internalID: 3612864437484796382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_16
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1335
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1092980d75daf68e0800000000000000
+      internalID: -1697947941822977791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_17
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 1335
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb081355e817710e0800000000000000
+      internalID: -2299244228620746561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1060
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4407c1dd68cb312b0800000000000000
+      internalID: -5614937022979608508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_19
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1060
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -482,12 +647,12 @@ TextureImporter:
       name: Asset_Blockouts2_20
       rect:
         serializedVersion: 2
-        x: 2475
-        y: 1610
+        x: 550
+        y: 1060
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -503,12 +668,12 @@ TextureImporter:
       name: Asset_Blockouts2_21
       rect:
         serializedVersion: 2
-        x: 3025
-        y: 1610
+        x: 1100
+        y: 1060
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -524,12 +689,12 @@ TextureImporter:
       name: Asset_Blockouts2_22
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1335
+        x: 1375
+        y: 1060
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -545,12 +710,12 @@ TextureImporter:
       name: Asset_Blockouts2_23
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1335
+        x: 1650
+        y: 1060
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -566,12 +731,12 @@ TextureImporter:
       name: Asset_Blockouts2_24
       rect:
         serializedVersion: 2
-        x: 550
-        y: 1335
+        x: 2200
+        y: 1060
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -587,12 +752,12 @@ TextureImporter:
       name: Asset_Blockouts2_25
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1335
+        x: 3025
+        y: 1060
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -608,12 +773,12 @@ TextureImporter:
       name: Asset_Blockouts2_26
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 1335
+        x: 0
+        y: 785
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -629,12 +794,12 @@ TextureImporter:
       name: Asset_Blockouts2_27
       rect:
         serializedVersion: 2
-        x: 1650
-        y: 1335
+        x: 275
+        y: 785
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -647,15 +812,78 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Blockouts2_31
+      name: Asset_Blockouts2_28
       rect:
         serializedVersion: 2
-        x: 3025
-        y: 1335
+        x: 550
+        y: 785
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9571d363b6c40f0800000000000000
+      internalID: -1131411525679490587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_29
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 785
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921a5f3ae9b0e33d0800000000000000
+      internalID: -3225127507167174359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_30
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 785
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4955a7a34740fdd70800000000000000
+      internalID: 9069973071791281556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_31
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 785
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -671,12 +899,12 @@ TextureImporter:
       name: Asset_Blockouts2_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1060
+        x: 2200
+        y: 785
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -692,12 +920,12 @@ TextureImporter:
       name: Asset_Blockouts2_33
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1060
+        x: 0
+        y: 510
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -713,12 +941,12 @@ TextureImporter:
       name: Asset_Blockouts2_34
       rect:
         serializedVersion: 2
-        x: 550
-        y: 1060
+        x: 275
+        y: 510
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -734,12 +962,12 @@ TextureImporter:
       name: Asset_Blockouts2_35
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 1060
+        x: 550
+        y: 510
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -755,12 +983,12 @@ TextureImporter:
       name: Asset_Blockouts2_36
       rect:
         serializedVersion: 2
-        x: 1375
-        y: 1060
+        x: 1100
+        y: 510
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -776,12 +1004,12 @@ TextureImporter:
       name: Asset_Blockouts2_37
       rect:
         serializedVersion: 2
-        x: 1650
-        y: 1060
+        x: 1375
+        y: 510
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -794,15 +1022,36 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Blockouts2_39
+      name: Asset_Blockouts2_38
       rect:
         serializedVersion: 2
-        x: 2200
-        y: 1060
+        x: 1650
+        y: 510
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5260f69e275e5ce0800000000000000
+      internalID: -1414597375335308706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Blockouts2_39
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 510
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -819,11 +1068,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3025
-        y: 1060
+        y: 235
         width: 275
         height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -831,321 +1080,6 @@ TextureImporter:
       bones: []
       spriteID: 1747fabf8674eb400800000000000000
       internalID: 341789137951487089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_41
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bf4b1b8b9d186610800000000000000
-      internalID: 1614573020303282096
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_42
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21f2d2a231f091020800000000000000
-      internalID: 2312896458617859858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_43
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fed2851ab2122750800000000000000
-      internalID: 6278601420942008053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_44
-      rect:
-        serializedVersion: 2
-        x: 1100
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ebcd14c0d3ff1fe0800000000000000
-      internalID: -1215985296397710361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_45
-      rect:
-        serializedVersion: 2
-        x: 1375
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7a3dc5cb2d611f40800000000000000
-      internalID: 5697455038369970810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_46
-      rect:
-        serializedVersion: 2
-        x: 1650
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6530caa7a4effcbd0800000000000000
-      internalID: -2607586063385099434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_48
-      rect:
-        serializedVersion: 2
-        x: 2200
-        y: 785
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9686ccc57caaa0b0800000000000000
-      internalID: -5716567155046709602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_51
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98faa69e659ad9450800000000000000
-      internalID: 6097215661277884297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_52
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad82d7dbaa6320720800000000000000
-      internalID: 2810869224384047322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_53
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80d495d07145d2280800000000000000
-      internalID: -9066498016842003192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_54
-      rect:
-        serializedVersion: 2
-        x: 1100
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efe2da55859a084f0800000000000000
-      internalID: -828476134576541954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_55
-      rect:
-        serializedVersion: 2
-        x: 1375
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a82a0bdaa3fc2e30800000000000000
-      internalID: 4480223644471666848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_56
-      rect:
-        serializedVersion: 2
-        x: 1650
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9caf848f2150863e0800000000000000
-      internalID: -2060391250488919351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_58
-      rect:
-        serializedVersion: 2
-        x: 3025
-        y: 510
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48e9d745d17e34c40800000000000000
-      internalID: 5495490083479723652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Asset_Blockouts2_66
-      rect:
-        serializedVersion: 2
-        x: 3025
-        y: 235
-        width: 275
-        height: 275
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41b9935773c876fe0800000000000000
-      internalID: -1195833006225777900
       vertices: []
       indices: 
       edges: []

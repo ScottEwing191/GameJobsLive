@@ -148,4 +148,8 @@ public class UIManager : MonoSingleton<UIManager> {
         yield return null;
     }
 
+    public void ResetLevel() {
+        GameManager.Instance.ResetLevel();
+    }
+
 }
