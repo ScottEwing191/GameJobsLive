@@ -4433,6 +4433,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b879f2c9291934ebbbc6ac3d763981, type: 3}
+--- !u!1001 &702706362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728228, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728282, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: m_Name
+      value: DialogManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491023056147728283, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: No matter what the world throws at you
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 348a5f04efae7994b8fe9c30d9dc6896, type: 3}
 --- !u!1 &747914541
 GameObject:
   m_ObjectHideFlags: 0
