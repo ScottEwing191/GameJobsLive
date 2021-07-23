@@ -20,7 +20,7 @@ public class DialogScript : MonoBehaviour
         foreach (char letter in sentences[index].ToCharArray())
         {
             dialogText.text += letter;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }
