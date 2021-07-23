@@ -33,6 +33,7 @@ public class InGameUI : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
+        Resume();
     }
 
 }
