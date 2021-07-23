@@ -389,8 +389,11 @@ public class CharacterController2D : MonoBehaviour {
 
 
     void OnCollisionEnter2D(Collision2D col) {
+        print("Collision");
         if (col.gameObject.CompareTag("SpinningPlatform"))
             this.transform.parent = col.transform;
+
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision) {

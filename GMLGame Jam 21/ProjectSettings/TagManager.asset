@@ -9,6 +9,7 @@ TagManager:
   - SpinningPlatform
   - Rope
   - RopeCollider
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
