@@ -426,7 +426,8 @@ public class CharacterController2D : MonoBehaviour {
         isDead = true;
         anim.Play("Hurt");
         playerInputs.enabled = false;
-        Invoke("ResetPlayer", resetTime);
+        //Invoke("ResetPlayer", resetTime);
+        GameManager.Instance.Invoke("ResetLevel", resetTime);
     }
 
 }
