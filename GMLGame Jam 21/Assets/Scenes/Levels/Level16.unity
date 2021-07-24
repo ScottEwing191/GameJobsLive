@@ -10747,6 +10747,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 566201180, guid: 1c87d850b8e867740a485fc12ea92d37, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 948133321, guid: 1c87d850b8e867740a485fc12ea92d37, type: 3}
+      propertyPath: m_Name
+      value: PauseButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922145755, guid: 1c87d850b8e867740a485fc12ea92d37, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922145758, guid: 1c87d850b8e867740a485fc12ea92d37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ad4dcb8bc4b33b47bb44bc2f2df0b65, type: 3}
+    - target: {fileID: 1922145758, guid: 1c87d850b8e867740a485fc12ea92d37, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2840434739188167936, guid: 1c87d850b8e867740a485fc12ea92d37, type: 3}
       propertyPath: m_Pivot.x
       value: 0
