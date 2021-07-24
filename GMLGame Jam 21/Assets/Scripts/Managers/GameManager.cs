@@ -15,6 +15,14 @@ public class GameManager : MonoSingleton<GameManager>
     private void Start() {
         //hitchedRopeArray = FindObjectsOfType(typeof(HitchedRope)) as HitchedRope;
         hitchedRopeArray = FindObjectsOfType<HitchedRope>();
+        Volume gameVolume = FindObjectOfType<Volume>();
+
+        if (gameVolume != null) {
+            if (!gameVolume.isVolumeOn) {
+                Camera.main.GetComponent<AudioListener>().enabled = false;
+            } 
+        }
+        
     }
 
     // Update is called once per frame
