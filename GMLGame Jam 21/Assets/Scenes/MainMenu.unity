@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelDisable: {fileID: 282734844}
-  panelEnable: {fileID: 1305397513}
+  panelEnable: {fileID: 1944500796}
 --- !u!1 &719757734
 GameObject:
   m_ObjectHideFlags: 0
