@@ -41,6 +41,7 @@ public class CharacterController2D : MonoBehaviour {
     private PlayerSounds playerSounds;
     private GameObject canvas;                  // Need to flip the canvas every time the player flipped when the direction changes
     private Collision2D groundCollision;
+    [SerializeField] private GameObject deathSteam;
     [SerializeField] private Transform groundNormal;
     [SerializeField] private Transform slopeLimit;      // the height of the contact point on the circle collider above which the game will assume the..
                                                         // player is not touching a slope
@@ -114,7 +115,9 @@ public class CharacterController2D : MonoBehaviour {
         }
 
         if (HaveAllKeysBeenUsed() && autoResetLevel && !isDead) {
-            Invoke("ResetPlayer", resetTime);
+            //Invoke("ResetPlayer", resetTime);
+            GameManager.Instance.Invoke("ResetLevel", resetTime);
+
             isDead = true;
 
 
@@ -426,6 +429,9 @@ public class CharacterController2D : MonoBehaviour {
         isDead = true;
         anim.Play("Hurt");
         playerInputs.enabled = false;
+        deathSteam.SetActive(true);
+        deathSteam.transform.parent = null;
+        deathSteam.GetComponent<Animator>().Play("smoke_death");
         //Invoke("ResetPlayer", resetTime);
         GameManager.Instance.Invoke("ResetLevel", resetTime);
     }
