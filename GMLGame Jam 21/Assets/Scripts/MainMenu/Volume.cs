@@ -9,6 +9,7 @@ public class Volume : MonoBehaviour
     private static Volume instance;
     public int order = 0;
     public bool isVolumeOn = true;
+    [SerializeField] private GameObject mainCamera;
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);
@@ -26,13 +27,23 @@ public class Volume : MonoBehaviour
         order++;
     }
     public void VolumeOn() {
-        AudioListener listen =  Camera.main.GetComponent<AudioListener>();
-        listen.enabled = true;
+        //AudioListener listen =  Camera.main.GetComponent<AudioListener>();
+        //AudioListener listen = mainCamera.GetComponent<AudioListener>();
+        //mainCamera.SetActive(true);
+        AudioListener.volume = 1;
+        //listen.enabled = true;
         isVolumeOn = true;
     }
 
     public void VolumeOff() {
-        Camera.main.GetComponent<AudioListener>().enabled = false;
+        //Camera.main.GetComponent<AudioListener>().enabled = false;
+        //mainCamera.SetActive(false);
+
+
+        //AudioListener listen = mainCamera.GetComponent<AudioListener>();
+        //listen.enabled = false;
+        //listen.volume
+        AudioListener.volume = 0;
         isVolumeOn = false;
     }
 }

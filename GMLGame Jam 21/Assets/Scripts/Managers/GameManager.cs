@@ -19,8 +19,10 @@ public class GameManager : MonoSingleton<GameManager>
 
         if (gameVolume != null) {
             if (!gameVolume.isVolumeOn) {
-                Camera.main.GetComponent<AudioListener>().enabled = false;
-            } 
+                //Camera.main.GetComponent<AudioListener>().enabled = false;
+                AudioListener.volume = 0;
+
+            }
         }
         
     }
