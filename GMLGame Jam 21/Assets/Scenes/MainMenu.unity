@@ -642,7 +642,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sound Off
+  m_Text: 
 --- !u!222 &356646571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2540,7 +2540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sound On
+  m_Text: 
 --- !u!222 &1413635220
 CanvasRenderer:
   m_ObjectHideFlags: 0
