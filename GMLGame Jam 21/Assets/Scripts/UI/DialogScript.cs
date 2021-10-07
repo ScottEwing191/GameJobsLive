@@ -42,7 +42,13 @@ public class DialogScript : MonoBehaviour
         }
         else
         {
-            dialogText.text = "";
+            StartCoroutine(Wait());
+            //dialogText.text = "";
         }
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        dialogText.text = "";
     }
 }

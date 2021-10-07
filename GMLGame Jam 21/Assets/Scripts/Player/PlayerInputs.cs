@@ -7,7 +7,7 @@ public class PlayerInputs : MonoBehaviour {
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private float runSpeed = 40f;
     [SerializeField] private float resetTime = 0.5f;      // the time the reset button is held for before the level resets
-    [SerializeField] public bool shouldLimitKeyPresses = true;
+    [SerializeField] public bool shouldLimitKeyPresses = false;
 
     //private bool hasReleasedRight = false;
     //private bool hasReleasedLeft = false;
@@ -26,42 +26,96 @@ public class PlayerInputs : MonoBehaviour {
     private Coroutine resetTimer;
     private bool isResetTimerRoutineRunning = false;
 
+    private int left;
+    private int right;
+    private int up;
+    private int down;
 
+    public void Awake()
+    {
+        MovementSelection();
+        //StartCoroutine(Movement());
+    }
     // Update is called once per frame
-    void Update() {
+    void Update() 
+    {
+        //StartCoroutine(Movement());
+        if (left == 1)
+        {
+            // Get Left Input
+            if (controller.HasReleasedLeft == false)
+            {
+                horizontalMove = Input.GetAxisRaw("HorizontalLeft") * runSpeed;
+            }
+            else { horizontalMove = 0; }        // stops the hozizontalMove value getting bigger every frame the key is held down
+            if (Input.GetButtonUp("HorizontalLeft") && shouldLimitKeyPresses)
+            {
+                if (!controller.RopeControls.Attached)
+                {        // dont count swinging on the rope towards limititing inputs
+                    controller.HasReleasedLeft = true;
+                    UIManager.Instance.UsedLeft();
+                }
 
-        // Get Left Input
-        if (controller.HasReleasedLeft == false) {
-            horizontalMove = Input.GetAxisRaw("HorizontalLeft") * runSpeed;
-        }
-        else { horizontalMove = 0; }        // stops the hozizontalMove value getting bigger every frame the key is held down
-        if (Input.GetButtonUp("HorizontalLeft") && shouldLimitKeyPresses) {
-            if (!controller.RopeControls.Attached) {        // dont count swinging on the rope towards limititing inputs
-                controller.HasReleasedLeft = true;
-                UIManager.Instance.UsedLeft();
             }
 
+            // Get Right Input
+            if (controller.HasReleasedRight == false)
+            {
+                horizontalMove += Input.GetAxisRaw("HorizontalRight") * runSpeed;
+
+            }
+            else { horizontalMove += 0; }
+            if (Input.GetButtonUp("HorizontalRight") && shouldLimitKeyPresses)
+            {
+                if (!controller.RopeControls.Attached)
+                {        // dont count swinging on the rope towards limititing inputs
+                    controller.HasReleasedRight = true;
+                    UIManager.Instance.UsedRight();
+                }
+
+            }
         }
 
-        // Get Right Input
-        if (controller.HasReleasedRight == false) {
-            horizontalMove += Input.GetAxisRaw("HorizontalRight") * runSpeed;
+        else if (left == 2)
+        {
+            // Get Left Input
+            if (controller.HasReleasedLeft == false)
+            {
+                horizontalMove = Input.GetAxisRaw("HorizontalLeft") * -runSpeed;
+            }
+            else { horizontalMove = 0; }        // stops the hozizontalMove value getting bigger every frame the key is held down
+            if (Input.GetButtonUp("HorizontalLeft") && shouldLimitKeyPresses)
+            {
+                if (!controller.RopeControls.Attached)
+                {        // dont count swinging on the rope towards limititing inputs
+                    controller.HasReleasedLeft = true;
+                    UIManager.Instance.UsedLeft();
+                }
 
-        }
-        else { horizontalMove += 0; }
-        if (Input.GetButtonUp("HorizontalRight") && shouldLimitKeyPresses) {
-            if (!controller.RopeControls.Attached) {        // dont count swinging on the rope towards limititing inputs
-                controller.HasReleasedRight = true;
-                UIManager.Instance.UsedRight();
             }
 
-        }
+            // Get Right Input
+            if (controller.HasReleasedRight == false)
+            {
+                horizontalMove += Input.GetAxisRaw("HorizontalRight") * -runSpeed;
 
+            }
+            else { horizontalMove += 0; }
+            if (Input.GetButtonUp("HorizontalRight") && shouldLimitKeyPresses)
+            {
+                if (!controller.RopeControls.Attached)
+                {        // dont count swinging on the rope towards limititing inputs
+                    controller.HasReleasedRight = true;
+                    UIManager.Instance.UsedRight();
+                }
+
+            }
+        }
         // Jump Input
         // This version is for the only jump or climb not both version
-        if (Input.GetButtonDown("VerticalUp")) {
+        if (Input.GetButtonDown("VerticalUp"))
+        {
             jump = true;
-
         }
 
 
@@ -69,12 +123,14 @@ public class PlayerInputs : MonoBehaviour {
         climbUpMove = Input.GetAxisRaw("VerticalUp");
         // Climb down - Now that climb down is essentially just drop/jump off the vine I only want it too happen if the player presses the key...
         // but dont want to change all the code to use a bool instead
-        if (Input.GetButtonDown("VerticalDown") && checkButtonDownForFixedUpdateInput) {      
+        if (Input.GetButtonDown("VerticalDown") && checkButtonDownForFixedUpdateInput)
+        {
             climbDownMove = -1;
-            checkButtonDownForFixedUpdateInput = false; 
+            checkButtonDownForFixedUpdateInput = false;
 
         }
-        else if(checkButtonDownForFixedUpdateInput){
+        else if (checkButtonDownForFixedUpdateInput)
+        {
             climbDownMove = 0;
         }
 
@@ -120,4 +176,54 @@ public class PlayerInputs : MonoBehaviour {
 
         }
     }
+
+    public void MovementSelection()
+    {
+        // 1 -> left;
+        // 2 -> right;
+        // 3 -> up;
+        // 4 -> down;
+        //int count = 1;
+        left = Random.RandomRange(1, 3);
+        if (left == 1)
+        {
+            right = 2;
+        }
+        else
+        {
+            right = 1;
+        }
+        Debug.Log(left);
+        Debug.Log(right);
+    }
+
+    //IEnumerator Movement()
+    //{
+    //    // 1 -> left;
+    //    // 2 -> right;
+    //    // 3 -> up;
+    //    // 4 -> down;
+    //    //int count = 1;
+    //    //yield return new waitforseconds(20f);
+    //    left = Random.RandomRange(1, 3);
+    //    if (left == 1)
+    //    {
+    //        right = 2;
+    //    }
+    //    else
+    //    {
+    //        right = 1;
+    //    }
+    //    yield return new WaitForSeconds(20f);
+    //    //left = Random.RandomRange(1, 3);
+    //    //if (left == 1)
+    //    //{
+    //    //    right = 2;
+    //    //}
+    //    //else
+    //    //{
+    //    //    right = 1;
+    //    //}
+    //    //yield return new WaitForSeconds(20f);
+    //}
 }

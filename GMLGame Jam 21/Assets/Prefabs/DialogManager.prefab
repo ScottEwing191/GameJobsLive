@@ -126,7 +126,7 @@ MonoBehaviour:
   dialogText: {fileID: 8491023056048623186}
   sentences:
   - 
-  typingSpeed: 0.045
+  typingSpeed: 0.08
 --- !u!1 &8491023056197155958
 GameObject:
   m_ObjectHideFlags: 0
